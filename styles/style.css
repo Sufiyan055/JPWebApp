@@ -8,6 +8,7 @@
 
 body {
   overflow-x: hidden;
+  width: 100vw;
 }
 
 a {
@@ -31,6 +32,8 @@ li {
   position: absolute;
   border-radius: 55px;
   transform: rotate(60deg);
+  z-index: 11111;
+  display: none;
   background-color: #e1edff;
   width: 35rem;
   height: 33rem;
@@ -41,6 +44,8 @@ li {
   position: absolute;
   border-radius: 55px;
   transform: rotate(60deg);
+  z-index: 11111;
+  display: none;
   background-color: #cdddf6;
   width: 30rem;
   height: 30rem;
@@ -51,6 +56,8 @@ li {
   position: absolute;
   border-radius: 55px;
   transform: rotate(60deg);
+  z-index: 11111;
+  display: none;
   background-color: #c0d3f0;
   width: 25rem;
   height: 25rem;
@@ -74,6 +81,9 @@ li {
 .navHeroSection .mainNavbar .menuToggle {
   display: none;
 }
+.navHeroSection .mainNavbar .logoImg {
+  z-index: 11111;
+}
 .navHeroSection .mainNavbar .logoImg a img {
   width: 12rem;
 }
@@ -89,6 +99,7 @@ li {
   color: #fff;
   padding: 5px;
   border-radius: 5px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 .navHeroSection .heroSection {
   display: flex;
@@ -113,10 +124,10 @@ li {
 .navHeroSection .heroSection .serachBarContent strong .innerStrongH::after {
   content: "";
   width: 100%;
-  height: 10%;
+  height: 20%;
   position: absolute;
   left: 0px;
-  bottom: -4px;
+  bottom: -3px;
   background: linear-gradient(#fff, #85acff);
 }
 .navHeroSection .heroSection .serachBarContent p {
@@ -182,29 +193,35 @@ li {
   }
 }
 
+.nonIndexHtml {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.nonIndexHtml::before {
+  display: none;
+}
+
 @media screen and (max-width: 1235px) {
-  .navHeroSection {
-    /* .spannhS {
-      top: 88px;
-      right: 50px;
-      transform: rotate(0deg);
-      border-radius: 5px;
-      display: none;
-    }
-    .span1 {
-      width: 8rem;
-      height: 2rem;
-    }
-    .span2 {
-      width: 5rem;
-      height: 5rem;
-      display: none;
-    }
-    .span3 {
-      width: 2rem;
-      height: 2rem;
-      display: none;
-    } */
+  .navHeroSection .spannhS {
+    top: 88px;
+    right: 50px;
+    transform: rotate(0deg);
+    border-radius: 5px;
+    display: none;
+  }
+  .navHeroSection .span1 {
+    width: 8rem;
+    height: 2rem;
+  }
+  .navHeroSection .span2 {
+    width: 5rem;
+    height: 5rem;
+    display: none;
+  }
+  .navHeroSection .span3 {
+    width: 2rem;
+    height: 2rem;
+    display: none;
   }
   .navHeroSection::before {
     content: "";
@@ -216,20 +233,20 @@ li {
     transform: skewY(-5deg);
   }
   .navHeroSection .mainNavbar {
-    flex-direction: column;
     position: relative;
-    height: 19vh;
-    overflow: hidden;
-    transition: height 0.3s ease-in-out;
-  }
-  .navHeroSection .mainNavbar.ulBarActive {
-    height: 52vh;
+    justify-content: space-between;
+    padding: 5px 15px;
   }
   .navHeroSection .mainNavbar .menuToggle {
+    background: #fff;
+    padding: 25px 35px;
+    padding-right: 75px;
+    border-radius: 25px;
+    border: 0.1rem solid #3c65f5;
     display: block;
-    position: absolute;
-    top: 50px;
-    left: 60px;
+    position: fixed;
+    top: 100px;
+    right: -52px;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -237,6 +254,7 @@ li {
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
+    z-index: 11111;
   }
   .navHeroSection .mainNavbar .menuToggle::before {
     content: "";
@@ -268,12 +286,27 @@ li {
     box-shadow: 0 0 0 red;
   }
   .navHeroSection .mainNavbar .ulBar {
+    position: fixed;
     flex-direction: column;
+    width: 100%;
+    top: -5555px;
+    left: 0px;
+    height: 112%;
+    background-color: rgba(0, 0, 0, 0.5803921569);
+    z-index: 1111;
+    align-items: normal;
+    padding: 15px;
+    transition: top 0.3s ease-in-out;
   }
-  .navHeroSection .mainNavbar .contactUs {
-    position: absolute;
-    top: 50px;
-    right: 65px;
+  .navHeroSection .mainNavbar .ulBar li {
+    border-bottom: 1px solid #fff;
+  }
+  .navHeroSection .mainNavbar .ulBar li a {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  .navHeroSection .mainNavbar .ulBar.ulBarActive {
+    top: -5px;
   }
   .navHeroSection .heroSection {
     flex-direction: column-reverse;
@@ -313,9 +346,6 @@ li {
     height: 120vh;
     inset: 0;
     transform: skewY(-5deg);
-  }
-  .navHeroSection .mainNavbar .menuToggle {
-    left: 15px;
   }
   .navHeroSection .mainNavbar .ulBar .contactUs {
     font-size: 0.9rem;

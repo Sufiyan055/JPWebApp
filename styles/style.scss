@@ -9,6 +9,7 @@
 
 body {
   overflow-x: hidden;
+  width: 100vw;
 }
 
 a {
@@ -40,6 +41,8 @@ $white: #fff;
     position: absolute;
     border-radius: 55px;
     transform: rotate(60deg);
+    z-index: 11111;
+    display: none;
   }
   /* Span */
   .span1 {
@@ -77,6 +80,7 @@ $white: #fff;
       display: none;
     }
     .logoImg {
+      z-index: 11111;
       a {
         img {
           width: 12rem;
@@ -92,6 +96,7 @@ $white: #fff;
       color: $white;
       padding: 5px;
       border-radius: 5px;
+      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     }
   }
 
@@ -111,10 +116,10 @@ $white: #fff;
           &::after {
             content: "";
             width: 100%;
-            height: 10%;
+            height: 20%;
             position: absolute;
             left: 0px;
-            bottom: -4px;
+            bottom: -3px;
             background: linear-gradient(#fff, #85acff);
           }
         }
@@ -187,9 +192,16 @@ $white: #fff;
   }
 }
 
+.nonIndexHtml {
+  height: fit-content;
+  &::before {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1235px) {
   .navHeroSection {
-    /* .spannhS {
+    .spannhS {
       top: 88px;
       right: 50px;
       transform: rotate(0deg);
@@ -209,7 +221,7 @@ $white: #fff;
       width: 2rem;
       height: 2rem;
       display: none;
-    } */
+    }
     &::before {
       content: "";
       background: #f2f6fd;
@@ -220,19 +232,19 @@ $white: #fff;
       transform: skewY(-5deg);
     }
     .mainNavbar {
-      flex-direction: column;
       position: relative;
-      height: 19vh;
-      overflow: hidden;
-      transition: height 0.3s ease-in-out;
-      &.ulBarActive {
-        height: 52vh;
-      }
+      justify-content: space-between;
+      padding: 5px 15px;
       .menuToggle {
+        background: $white;
+        padding: 25px 35px;
+        padding-right: 75px;
+        border-radius: 25px;
+        border: 0.1rem solid $primaryColor;
         display: block;
-        position: absolute;
-        top: 50px;
-        left: 60px;
+        position: fixed;
+        top: 100px;
+        right: -52px;
         width: 30px;
         height: 30px;
         cursor: pointer;
@@ -240,6 +252,7 @@ $white: #fff;
         justify-content: center;
         align-items: center;
         margin-bottom: 15px;
+        z-index: 11111;
         &::before {
           content: "";
           position: absolute;
@@ -271,12 +284,27 @@ $white: #fff;
         }
       }
       .ulBar {
+        position: fixed;
         flex-direction: column;
-      }
-      .contactUs {
-        position: absolute;
-        top: 50px;
-        right: 65px;
+        width: 100%;
+        top: -5555px;
+        left: 0px;
+        height: 112%;
+        background-color: #00000094;
+        z-index: 1111;
+        align-items: normal;
+        padding: 15px;
+        transition: top 0.3s ease-in-out;
+        li {
+          border-bottom: 1px solid #fff;
+          a {
+            font-size: 1.5rem;
+            color: #fff;
+          }
+        }
+        &.ulBarActive {
+          top: -5px;
+        }
       }
     }
     .heroSection {
@@ -298,6 +326,7 @@ $white: #fff;
       inset: 0;
       transform: skewY(-5deg);
     }
+
     .heroSection {
       width: 100%;
       .serachBarContent {
@@ -311,6 +340,7 @@ $white: #fff;
 @media screen and (max-width: 625px) {
   .navHeroSection {
     height: 88vh;
+
     &::before {
       content: "";
       background: #f2f6fd;
@@ -321,9 +351,6 @@ $white: #fff;
       transform: skewY(-5deg);
     }
     .mainNavbar {
-      .menuToggle {
-        left: 15px;
-      }
       .ulBar {
         .contactUs {
           font-size: 0.9rem;

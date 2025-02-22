@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*  */
 
-let ulBar = document.querySelector(".mainNavbar");
+let ulBar = document.querySelector(".ulBar");
 let menuToggle = document.querySelector(".menuToggle");
 
 toggleNav = () => {

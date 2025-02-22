@@ -1,0 +1,75 @@
+.nonIndexHtml {
+  height: fit-content;
+}
+.jobsCategorySection {
+  margin-top: 15px;
+}
+
+$primary-color: #3c65f5;
+$secondary-color: #ffffff;
+$border-color: #ddd;
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  flex-wrap: wrap;
+
+  .search-input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .location-dropdown {
+    padding: 10px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    outline: none;
+    background: $secondary-color;
+  }
+
+  .search-button {
+    padding: 10px 15px;
+    border: none;
+    background: $primary-color;
+    color: $secondary-color;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+
+    i {
+      font-size: 14px;
+    }
+
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .search-container {
+    .search-input {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 255px) {
+  .search-container {
+    flex-direction: column;
+  }
+  .search-input,
+  .location-dropdown,
+  .search-button {
+    width: 100%;
+  }
+}
