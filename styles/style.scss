@@ -1,15 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Gothic&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+AU+VIC+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alike+Angular&family=Allura&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Gothic&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+AU+VIC+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Satisfy&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  max-width: 100%;
+  scroll-behavior: smooth;
 }
 
+html,
 body {
   overflow-x: hidden;
-  width: 100vw;
+  max-width: 100%;
+}
+
+.nonIndexHtml {
+  margin-bottom: 0px;
+  &::before {
+    display: none;
+  }
 }
 
 a {
@@ -34,15 +44,14 @@ $white: #fff;
 }
 
 .navHeroSection {
-  background: linear-gradient(#fff, #f2f6fd);
+  background: none;
+  position: relative;
   @mixin spanContentForDesign {
     top: -80px;
     right: -330px;
     position: absolute;
     border-radius: 55px;
     transform: rotate(60deg);
-    z-index: 11111;
-    display: none;
   }
   /* Span */
   .span1 {
@@ -68,7 +77,8 @@ $white: #fff;
     content: "";
     background: #f2f6fd;
     position: absolute;
-    z-index: -1;
+    z-index: -111;
+    height: 100vh;
     inset: 0;
     transform: skewY(-5deg);
   }
@@ -76,11 +86,28 @@ $white: #fff;
     @include flexcontent(1px);
     justify-content: space-between;
     padding: 5px 65px;
+    background-color: #f2f6fd;
+    &.onscrollVisble {
+      position: fixed;
+      width: 100%;
+      top: 0px;
+      background: #f2f6fd;
+      padding: 2px 25px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      z-index: 111;
+      .logoImg {
+        a {
+          img {
+            width: 7rem;
+          }
+        }
+      }
+    }
     .menuToggle {
       display: none;
     }
     .logoImg {
-      z-index: 11111;
       a {
         img {
           width: 12rem;
@@ -89,14 +116,55 @@ $white: #fff;
     }
     .ulBar {
       @include flexcontent(25px);
+
+      .ulBarLogoImage {
+        display: none;
+      }
+      li {
+        a {
+          font-size: 1.1rem;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            left: 50%;
+            bottom: -6px;
+            height: 3px;
+            background-color: $primaryColor;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+          }
+          &:hover::after {
+            width: 100%;
+            left: 0;
+            transform: translateX(0);
+          }
+        }
+        .highlight {
+          background-color: $primaryColorHover;
+          color: $white;
+          padding: 2px 15px;
+          border-radius: 5px;
+          &::after {
+            display: none;
+          }
+        }
+      }
     }
     .contactUs {
       z-index: 111;
       background: $primaryColor;
       color: $white;
-      padding: 5px;
+      padding: 10px 15px;
       border-radius: 5px;
-      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+      font-weight: 600;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      transition: box-shadow 0.2s ease-in-out;
+      &:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      }
     }
   }
 
@@ -109,23 +177,31 @@ $white: #fff;
       width: 40%;
       strong {
         font-family: Roboto, serif;
-        font-size: 2.6rem;
+        font-size: 3.2rem;
+        color: #05264e;
+        font-weight: 900;
+        z-index: 111;
         .innerStrongH {
-          color: $primaryColor;
+          font-weight: 700;
           position: relative;
+          display: inline-block;
+          color: #3c65f5;
           &::after {
             content: "";
-            width: 100%;
-            height: 20%;
             position: absolute;
-            left: 0px;
-            bottom: -3px;
-            background: linear-gradient(#fff, #85acff);
+            left: 0;
+            bottom: 5px;
+            width: 100%;
+            height: 20px;
+            background-color: #dfe7fc;
+            z-index: -1;
           }
         }
       }
       p {
+        margin-top: 15px;
         font-size: 1.3rem;
+        color: #4f5e64;
       }
       .btnSearch {
         margin-top: 25px;
@@ -147,7 +223,7 @@ $white: #fff;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             background-color: $primaryColor;
             color: $white;
-            border: none;
+            border-color: transparent;
           }
         }
       }
@@ -156,6 +232,39 @@ $white: #fff;
       .image {
         width: 100%;
         position: relative;
+        .dotBoxImage {
+          position: absolute;
+          z-index: 11;
+          top: -25px;
+          right: 31px;
+          animation: dotMove 3s infinite alternate ease-in-out;
+        }
+        @keyframes dotMove {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(30px);
+          }
+        }
+        .dotBoxImageSmall {
+          position: absolute;
+          z-index: 11;
+          left: -12px;
+          bottom: 15px;
+          height: 50px;
+          width: 100px;
+          object-fit: cover;
+          animation: dotMovesmall 3s infinite alternate ease-in-out;
+        }
+        @keyframes dotMovesmall {
+          0% {
+            transform: translateY(-25px);
+          }
+          100% {
+            transform: translateX(15px);
+          }
+        }
         .thisImg {
           width: 25em;
           border-radius: 4em;
@@ -192,49 +301,36 @@ $white: #fff;
   }
 }
 
-.nonIndexHtml {
-  height: fit-content;
-  &::before {
-    display: none;
+.contactUsUlbar {
+  display: none;
+}
+
+@media screen and (max-width: 1115px) {
+  .navHeroSection {
+    .spannhS {
+      right: -455px;
+    }
   }
 }
 
-@media screen and (max-width: 1235px) {
+@media screen and (max-width: 900px) {
+  body {
+    overflow-x: hidden;
+  }
   .navHeroSection {
+    margin-bottom: 95px;
     .spannhS {
-      top: 88px;
-      right: 50px;
-      transform: rotate(0deg);
-      border-radius: 5px;
-      display: none;
-    }
-    .span1 {
-      width: 8rem;
-      height: 2rem;
-    }
-    .span2 {
-      width: 5rem;
-      height: 5rem;
-      display: none;
-    }
-    .span3 {
-      width: 2rem;
-      height: 2rem;
-      display: none;
+      z-index: 11;
     }
     &::before {
       content: "";
-      background: #f2f6fd;
-      position: absolute;
-      z-index: -1;
-      height: 199vh;
-      inset: 0;
-      transform: skewY(-5deg);
+      height: 190vh;
     }
     .mainNavbar {
       position: relative;
       justify-content: space-between;
       padding: 5px 15px;
+      flex-direction: column;
       .menuToggle {
         background: $white;
         padding: 25px 35px;
@@ -243,7 +339,7 @@ $white: #fff;
         border: 0.1rem solid $primaryColor;
         display: block;
         position: fixed;
-        top: 100px;
+        top: 122px;
         right: -52px;
         width: 30px;
         height: 30px;
@@ -290,21 +386,53 @@ $white: #fff;
         top: -5555px;
         left: 0px;
         height: 112%;
-        background-color: #00000094;
+        background-color: $white;
         z-index: 1111;
         align-items: normal;
         padding: 15px;
         transition: top 0.3s ease-in-out;
+        .ulBarLogoImage {
+          display: block;
+          position: absolute;
+          top: -12px;
+          left: 50%;
+          transform: translate(-50%, 10%);
+          width: 15rem;
+        }
         li {
-          border-bottom: 1px solid #fff;
+          border-bottom: 1px solid #000;
           a {
             font-size: 1.5rem;
-            color: #fff;
+            color: $primaryColor;
+          }
+        }
+        .contactUsUlbar {
+          display: block;
+          background: $primaryColor;
+          position: absolute;
+          left: 50%;
+          top: 75%;
+          transform: translate(-50%, -50%);
+          color: $white;
+          padding: 10px 15px;
+          border-radius: 5px;
+          font-weight: 600;
+          width: 10rem;
+          text-align: center;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+            rgba(0, 0, 0, 0.22) 0px 10px 10px;
+          transition: box-shadow 0.2s ease-in-out;
+          &:hover {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+              rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
           }
         }
         &.ulBarActive {
           top: -5px;
         }
+      }
+      .contactUs {
+        display: none;
       }
     }
     .heroSection {
@@ -316,15 +444,19 @@ $white: #fff;
 
 @media screen and (max-width: 881px) {
   .navHeroSection {
-    height: 88vh;
+    .spannhS {
+      right: -455px;
+    }
     &::before {
       content: "";
-      background: #f2f6fd;
-      position: absolute;
-      z-index: -1;
-      height: 155vh;
-      inset: 0;
-      transform: skewY(-5deg);
+      height: 180vh;
+    }
+    .mainNavbar {
+      .contactUs {
+        font-weight: 500;
+        font-size: 0.7rem;
+        padding: 5px 15px;
+      }
     }
 
     .heroSection {
@@ -339,16 +471,8 @@ $white: #fff;
 
 @media screen and (max-width: 625px) {
   .navHeroSection {
-    height: 88vh;
-
     &::before {
-      content: "";
-      background: #f2f6fd;
-      position: absolute;
-      z-index: -1;
-      height: 120vh;
-      inset: 0;
-      transform: skewY(-5deg);
+      height: 150vh;
     }
     .mainNavbar {
       .ulBar {
@@ -367,10 +491,15 @@ $white: #fff;
         width: 100%;
         padding: 15px;
         strong {
-          font-size: 1.8rem;
+          font-size: 2.5rem;
+          .innerStrongH {
+            &::after {
+              height: 10px;
+            }
+          }
         }
         p {
-          font-size: 1.3rem;
+          font-size: 1.4rem;
         }
         .btnSearch {
           a {
@@ -380,6 +509,15 @@ $white: #fff;
       }
       .pictureContent {
         .image {
+          .dotBoxImage {
+            height: 3.5rem;
+            top: 2px;
+            right: 20px;
+          }
+          .dotBoxImageSmall {
+            width: 4rem;
+            height: 2rem;
+          }
           .thisImgBig {
             width: 15rem;
           }
@@ -392,24 +530,29 @@ $white: #fff;
   }
 }
 
+@media screen and (max-width: 488px) {
+  .navHeroSection {
+    .spannhS {
+      right: -395px;
+    }
+  }
+}
+
 @media screen and (max-width: 388px) {
   .navHeroSection {
     &::before {
-      content: "";
-      background: #f2f6fd;
-      position: absolute;
-      z-index: -1;
-      height: 115vh;
-      inset: 0;
-      transform: skewY(-5deg);
+      height: 145vh;
+    }
+    .spannhS {
+      right: -425px;
     }
     .heroSection {
       .serachBarContent {
         strong {
-          font-size: 1.12rem;
+          font-size: 2rem;
         }
         p {
-          font-size: 0.9rem;
+          font-size: 1.2rem;
         }
       }
       .pictureContent {
@@ -440,11 +583,26 @@ $white: #fff;
   }
 }
 
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(100%);
+  transition: opacity 0.9s ease-in-out, filter 0.9s ease-in-out,
+    transform 0.9s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
 /* Jobs category Here */
 
 .jobsCategorySection {
-  margin-top: 265px;
+  margin-top: 150px;
   padding: 5px 55px;
+  margin-bottom: 100px;
   .jobsCategoryHead {
     font-size: 2.5rem;
     margin-bottom: 15px;
@@ -455,6 +613,7 @@ $white: #fff;
     @include flexcontent(15px);
     flex-wrap: wrap;
     margin: 0;
+
     .job-card {
       background: white;
       border-radius: 12px;
@@ -473,20 +632,22 @@ $white: #fff;
 
         h2 {
           margin: 10px 0;
-          font-size: 20px;
+          font-size: 1.2rem;
         }
 
         .details {
           display: flex;
           justify-content: space-around;
-          font-size: 14px;
+          font-size: 1rem;
           color: #555;
           margin: 5px 0;
         }
 
         p {
-          font-size: 14px;
+          font-size: 1rem;
           color: #444;
+          text-align: left;
+          padding: 0px 28px;
         }
 
         .buttons {
@@ -526,53 +687,139 @@ $white: #fff;
     }
   }
   .viewJobsBtn {
-    margin-top: 65px;
+    margin-top: 50px;
     @include flexcontent(2px);
 
     .viewJobsCategory {
-      font-size: 1.5rem;
-      border: 1px solid #000;
+      font-size: 1.3rem;
       border-radius: 5px;
-      padding: 2px 5px;
+      padding: 5px 15px;
+      font-weight: 600;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      position: relative;
+      transition: color 0.5s ease-in-out;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        border-radius: 5px;
+        background-color: $primaryColor;
+        z-index: -1;
+        transition: width 0.5s ease-in-out;
+      }
+      &:hover::before {
+        width: 100%;
+      }
+      &:hover {
+        color: $white;
+      }
     }
   }
 }
 
 @media screen and (max-width: 887px) {
   .jobsCategorySection {
-    margin-top: 442px;
-  }
-}
-
-@media screen and (max-width: 625px) {
-  .jobsCategorySection {
-    margin-top: 252px;
-    .viewJobsBtn {
-      .viewJobsCategory {
-        font-size: 1.1rem;
+    margin-top: 65px;
+    padding: 15px 5px;
+    .mainJobsDiv {
+      .job-card {
+        .job-card {
+          .job-info {
+            h2 {
+              font-size: 0.5rem;
+            }
+            .details {
+              font-size: 0.5rem;
+            }
+            p {
+              font-family: 0.5rem;
+            }
+            .buttons {
+              button {
+                font-size: 0.1rem;
+                padding: 5px 1px;
+              }
+            }
+          }
+        }
       }
     }
   }
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 739px) {
   .jobsCategorySection {
-    padding: 5px 15px;
     .mainJobsDiv {
       .job-card {
+        width: 200px;
         .job-info {
           h2 {
             font-size: 1rem;
           }
           .details {
             font-size: 0.8rem;
+            @include flexcontent(5px);
+            flex-direction: column;
           }
           p {
-            font-family: 0.8rem;
+            font-size: 0.8rem;
+            text-align: center;
           }
           .buttons {
+            @include flexcontent(5px);
+            flex-direction: column;
+            align-items: normal;
+            width: 100%;
             button {
               font-size: 0.8rem;
+              padding: 5px 1px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .jobsCategorySection {
+    .viewJobsBtn {
+      .viewJobsCategory {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .jobsCategorySection {
+    padding: 5px 15px;
+    .mainJobsDiv {
+      .job-card {
+        width: 150px;
+        .job-info {
+          h2 {
+            font-size: 0.8rem;
+          }
+          .details {
+            font-size: 0.6rem;
+            @include flexcontent(5px);
+            flex-direction: column;
+          }
+          p {
+            font-size: 0.6rem;
+          }
+          .buttons {
+            @include flexcontent(5px);
+            flex-direction: column;
+            align-items: normal;
+            width: 100%;
+            button {
+              font-size: 0.5rem;
               padding: 5px 1px;
             }
           }

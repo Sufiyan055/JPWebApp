@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="/styles/enquiryform.css" />
     <link rel="stylesheet" href="styles/findjobs.css" />
+    <link rel="stylesheet" href="styles/aboutUs.css" />
+    <link rel="stylesheet" href="styles/contactUs.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -33,96 +36,88 @@
           />
           <li><a href="index.html">Home</a></li>
           <li><a href="findJobs.html">Find Jobs</a></li>
-          <li>
-            <a href="enquiryform.html" class="highlight">Employer Enquiry</a>
-          </li>
+          <li><a href="enquiryform.html">Employer Enquiry</a></li>
           <li><a href="aboutUs.html">About Us</a></li>
-          <a href="contactUs.html" class="contactUsUlbar">Contact Us</a>
+          <a href="contactUs.html" class="contactUsUlbar highlight"
+            >Contact Us</a
+          >
         </ul>
         <a href="contactUs.html" class="contactUs">Contact Us</a>
       </nav>
     </header>
 
-    <!-- About Tiara and Information -->
+    <!-- Contact Tiara Consultancy  -->
 
-    <section class="tagLineBgImage">
+    <section class="tagLineBgImage contactUsImage">
       <h1>
-        Find the Right Talent with <br />
+        Contact <br />
         <strong>Tiara Consultancy </strong>
       </h1>
-      <h3>Hire Smart. Grow Faster. Succeed with Confidence.</h3>
-    </section>
-    <section class="enquiryFormAbout">
-      <p>
-        <img class="firstInverted hidden" src="/images/inverted-commas.png" />
-        At Tiara Consultancy, we understand that hiring the right people is the
-        foundation of a successful business. The right talent can transform your
-        company, drive innovation, and help you achieve long-term success. We
-        specialize in connecting top-tier professionals with businesses like
-        yours—efficiently and seamlessly.
-        <img class="secondInverted hidden" src="/images/inverted-commas.png" />
-      </p>
     </section>
 
-    <!-- Contact Here -->
+    <!--  -->
 
-    <section class="contact-section">
-      <div class="contact-container">
-        <!-- Left Side: Contact Form -->
-        <div class="contact-form">
-          <h4>Employer Enquiry Form</h4>
-          <h2>Get in touch</h2>
-          <p>
-            The right move at the right time saves your investment. Live the
-            dream of expanding your business.
+    <section class="contactSection" id="contact">
+      <div class="leave-message" id="leave-message">
+        <h2>Get In Touch</h2>
+        <p>
+          Thank you for reaching out to us. Leave a meassage our team will get
+          in touch with you shortly. Have a nice day!
+        </p>
+        <form action="https://formspree.io/f/movvvzqv" method="POST">
+          <input type="hidden" name="_subject" value="Customer Query" />
+
+          <label for="name" class="hidden">Name*</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter Name"
+            class="hidden"
+            required
+          />
+
+          <label for="phone" class="hidden">Phone Number*</label>
+          <input
+            type="number"
+            id="phone"
+            name="Number"
+            placeholder="Enter Phone No."
+            class="hidden"
+            required
+          />
+
+          <label for="email" class="hidden">Email*</label>
+          <input
+            type="email"
+            id="email"
+            name="Email"
+            placeholder="Enter Email"
+            class="hidden"
+            required
+          />
+
+          <label for="message" class="hidden">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Describe"
+            class="hidden"
+          ></textarea>
+          <div class="emailWhatsappBtn hidden">
+            <button type="submit">Send on Email</button><span>OR</span>
+            <a class="whatsapBtn" onclick="sendtoWhatsapp()"
+              >Send on Whatsapp</a
+            >
+          </div>
+          <p class="alertbelowBtn" id="alertbelowBtn">
+            Please fill the required "*" Input
           </p>
-          <form>
-            <div class="input-group hidden">
-              <input type="text" placeholder="Enter your name" />
-              <input type="text" placeholder="Company" />
-            </div>
-            <div class="input-group hidden">
-              <input type="email" placeholder="Your email" />
-              <input type="text" placeholder="Phone number" />
-            </div>
-            <textarea
-              name="address"
-              id="address"
-              placeholder="Enter Your Company address"
-              class="addressTextArea hidden"
-            ></textarea>
-            <textarea
-              placeholder="Tell us about your company"
-              class="hidden"
-            ></textarea>
-            <div class="checkbox-group hidden">
-              <input type="checkbox" id="terms" />
-              <label for="terms"
-                >By clicking contact us button, you agree to our terms and
-                policy.</label
-              >
-            </div>
-            <button type="submit" class="btn hidden">
-              <span>📩</span> Send message
-            </button>
-          </form>
-        </div>
-
-        <!-- Right Side: Stacked Images -->
-        <div class="contact-images">
-          <img
-            src="images/EnquiryFormoneImg.jpg"
-            alt="Team Success"
-            class="top-image hidden"
-          />
-          <img
-            src="images/EnquiryFormTwoImg.jpg"
-            alt="Business Growth"
-            class="bottom-image hidden"
-          />
-        </div>
+        </form>
       </div>
     </section>
+
+    <!-- Contact Form -->
 
     <!-- Footer Section -->
 
@@ -181,5 +176,45 @@
 
     <!-- Script -->
     <script src="app.js"></script>
+    <script>
+      function sendtoWhatsapp() {
+        let messageOnTop = "-------Customer Message-------";
+        let name = document.getElementById("name").value;
+        let phone = document.getElementById("phone").value;
+        let email = document.getElementById("email").value;
+        let photographyService =
+          document.getElementById("photographyService").value;
+        let message = document.getElementById("message").value;
+        let alertbelowBtn = document.getElementById("alertbelowBtn");
+
+        if (!name || !phone || !email || !photographyService) {
+          alertbelowBtn.style.display = "block";
+          return;
+        } else {
+          alertbelowBtn.style.display = "none";
+        }
+
+        let url =
+          "https://wa.me/917304888579?text=" +
+          messageOnTop +
+          "%0a" +
+          "Name: " +
+          name +
+          "%0a" +
+          "Phone: " +
+          phone +
+          "%0a" +
+          "email: " +
+          email +
+          "%0a" +
+          "Photography Service: " +
+          photographyService +
+          "%0a" +
+          "message: " +
+          message;
+
+        window.open(url, "_blank").focus();
+      }
+    </script>
   </body>
 </html>

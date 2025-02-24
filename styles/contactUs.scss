@@ -1,0 +1,197 @@
+@mixin flexcontent($val) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $val;
+}
+
+@mixin robotoFont($fw, $fs) {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: $fw;
+  font-size: $fs;
+}
+
+$bodyBgColor: #000;
+$ftColor: #000;
+$hoverColor: #fff;
+
+.contactUsImage {
+  background: linear-gradient(45deg, #0000006b, #00000034),
+    url(/images/contactImageMain.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Contact section */
+
+.contactSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 40px;
+  margin: none auto;
+  .leave-message {
+    width: 60%;
+
+    h2 {
+      @include robotoFont(300, 2em);
+      margin-bottom: 20px;
+      border-bottom: 3px solid;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    p {
+      @include robotoFont(300, none);
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        @include robotoFont(300, none);
+        margin-bottom: 8px;
+      }
+
+      input,
+      textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 5px;
+        font-size: 1rem;
+        &::placeholder {
+          @include robotoFont(300, none);
+        }
+      }
+      #phone[type="number"]::-webkit-inner-spin-button,
+      #phone[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      textarea {
+        resize: none;
+        height: 120px;
+      }
+
+      .emailWhatsappBtn {
+        @include flexcontent(15px);
+        button,
+        .whatsapBtn {
+          padding: 12px;
+          border: none;
+
+          color: white;
+          font-size: 1.2rem;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          text-align: center;
+          width: 50%;
+        }
+        button {
+          color: $ftColor;
+          background: none;
+          @include robotoFont(300, 1.3em);
+          border: 1px solid;
+          position: relative;
+          border-radius: 3px;
+          color: $ftColor;
+          transition: color 0.3s ease;
+          &:hover {
+            color: $hoverColor;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 0%;
+            height: 100%;
+            background-color: $ftColor;
+            transition: width 0.4s ease;
+            z-index: -1;
+          }
+          &:hover::before {
+            width: 100%;
+          }
+          /*  */
+        }
+        .whatsapBtn {
+          color: $ftColor;
+          background: none;
+          @include robotoFont(300, 1.3em);
+          border: 1px solid;
+          position: relative;
+          border-radius: 3px;
+          color: $ftColor;
+          transition: color 0.3s ease;
+          &:hover {
+            color: $hoverColor;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 0%;
+            height: 100%;
+            background-color: #25d366;
+            transition: width 0.4s ease;
+            z-index: -1;
+          }
+          &:hover::before {
+            width: 100%;
+          }
+          /*  */
+        }
+      }
+      .alertbelowBtn {
+        color: red;
+        font-weight: bold;
+        font-family: sans-serif;
+        margin-top: 10px;
+        text-align: center;
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    flex-direction: column;
+    padding: 12px;
+    .leave-message {
+      width: 100%;
+      form {
+        .emailWhatsappBtn {
+          flex-direction: column;
+          button,
+          .whatsapBtn {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 517px) {
+  .contactSection {
+    .leave-message {
+      .emailWhatsappBtn {
+        button,
+        .whatsapBtn {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+}

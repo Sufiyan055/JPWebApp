@@ -1,0 +1,188 @@
+.contactUsImage {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.4196078431), rgba(0, 0, 0, 0.2039215686)), url(/images/contactImageMain.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Contact section */
+.contactSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 40px;
+  margin: none auto;
+}
+.contactSection .leave-message {
+  width: 60%;
+}
+.contactSection .leave-message h2 {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 2em;
+  margin-bottom: 20px;
+  border-bottom: 3px solid;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.contactSection .leave-message p {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: none;
+  margin-bottom: 20px;
+}
+.contactSection .leave-message form {
+  display: flex;
+  flex-direction: column;
+}
+.contactSection .leave-message form label {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: none;
+  margin-bottom: 8px;
+}
+.contactSection .leave-message form input,
+.contactSection .leave-message form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.contactSection .leave-message form input::-moz-placeholder, .contactSection .leave-message form textarea::-moz-placeholder {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: none;
+}
+.contactSection .leave-message form input::placeholder,
+.contactSection .leave-message form textarea::placeholder {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: none;
+}
+.contactSection .leave-message form #phone[type=number]::-webkit-inner-spin-button,
+.contactSection .leave-message form #phone[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.contactSection .leave-message form textarea {
+  resize: none;
+  height: 120px;
+}
+.contactSection .leave-message form .emailWhatsappBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.contactSection .leave-message form .emailWhatsappBtn button,
+.contactSection .leave-message form .emailWhatsappBtn .whatsapBtn {
+  padding: 12px;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  width: 50%;
+}
+.contactSection .leave-message form .emailWhatsappBtn button {
+  color: #000;
+  background: none;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.3em;
+  border: 1px solid;
+  position: relative;
+  border-radius: 3px;
+  color: #000;
+  transition: color 0.3s ease;
+  /*  */
+}
+.contactSection .leave-message form .emailWhatsappBtn button:hover {
+  color: #fff;
+}
+.contactSection .leave-message form .emailWhatsappBtn button::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0%;
+  height: 100%;
+  background-color: #000;
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+.contactSection .leave-message form .emailWhatsappBtn button:hover::before {
+  width: 100%;
+}
+.contactSection .leave-message form .emailWhatsappBtn .whatsapBtn {
+  color: #000;
+  background: none;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.3em;
+  border: 1px solid;
+  position: relative;
+  border-radius: 3px;
+  color: #000;
+  transition: color 0.3s ease;
+  /*  */
+}
+.contactSection .leave-message form .emailWhatsappBtn .whatsapBtn:hover {
+  color: #fff;
+}
+.contactSection .leave-message form .emailWhatsappBtn .whatsapBtn::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0%;
+  height: 100%;
+  background-color: #25d366;
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+.contactSection .leave-message form .emailWhatsappBtn .whatsapBtn:hover::before {
+  width: 100%;
+}
+.contactSection .leave-message form .alertbelowBtn {
+  color: red;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-top: 10px;
+  text-align: center;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    flex-direction: column;
+    padding: 12px;
+  }
+  .contactSection .leave-message {
+    width: 100%;
+  }
+  .contactSection .leave-message form .emailWhatsappBtn {
+    flex-direction: column;
+  }
+  .contactSection .leave-message form .emailWhatsappBtn button,
+  .contactSection .leave-message form .emailWhatsappBtn .whatsapBtn {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 517px) {
+  .contactSection .leave-message .emailWhatsappBtn button,
+  .contactSection .leave-message .emailWhatsappBtn .whatsapBtn {
+    font-size: 0.9em;
+  }
+}/*# sourceMappingURL=contactUs.css.map */

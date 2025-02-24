@@ -39,8 +39,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let ulBar = document.querySelector(".ulBar");
 let menuToggle = document.querySelector(".menuToggle");
+let mainNavbar = document.querySelector(".mainNavbar");
 
 toggleNav = () => {
   ulBar.classList.toggle("ulBarActive");
   menuToggle.classList.toggle("active");
 };
+
+const mainNavbarVisible = () => {
+  if (window.scrollY >= 500) {
+    mainNavbar.classList.add("onscrollVisble");
+  } else {
+    mainNavbar.classList.remove("onscrollVisble");
+  }
+};
+
+window.addEventListener("scroll", mainNavbarVisible);
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el) => observer.observe(el));

@@ -1,0 +1,123 @@
+// Global Styles
+$primary-color: #3c65f5;
+$secondary-color: #666;
+$button-border: #3c65f5;
+$background: #ffffff;
+$font-family: "Poppins", sans-serif;
+
+body {
+  background: $background;
+}
+
+.aboutUsImage {
+  background: linear-gradient(45deg, #0000006b, #00000034),
+    url(/images/aboutUsImgMain.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// Hero Section
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+
+  @media screen and (max-width: 478px) {
+    padding: 20px;
+  }
+
+  .hero-container {
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+    gap: 50px;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  .hero-text {
+    flex: 1;
+    font-family: $font-family;
+
+    h1 {
+      font-size: 3rem;
+      color: #000;
+      font-weight: 700;
+      line-height: 1.2;
+
+      @media screen and (max-width: 1155px) {
+        font-size: 2rem;
+      }
+
+      @media (max-width: 478px) {
+        font-size: 1.3rem;
+      }
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: $secondary-color;
+      margin-top: 10px;
+      max-width: 450px;
+
+      @media (max-width: 1155px) {
+        font-size: 1.1rem;
+      }
+      @media (max-width: 900px) {
+        max-width: 100%;
+      }
+      @media (max-width: 478px) {
+        font-size: 1rem;
+      }
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      border: 2px solid $button-border;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 500;
+      color: $primary-color;
+      text-decoration: none;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        background: $primary-color;
+        color: white;
+      }
+    }
+  }
+
+  .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+      @media (max-width: 900px) {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.secondHero-container {
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}

@@ -1,14 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Gothic&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+AU+VIC+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alike+Angular&family=Allura&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Gothic&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+AU+VIC+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Satisfy&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  max-width: 100%;
+  scroll-behavior: smooth;
 }
 
+html,
 body {
   overflow-x: hidden;
-  width: 100vw;
+  max-width: 100%;
+}
+
+.nonIndexHtml {
+  margin-bottom: 0px;
+}
+.nonIndexHtml::before {
+  display: none;
 }
 
 a {
@@ -22,7 +32,8 @@ li {
 }
 
 .navHeroSection {
-  background: linear-gradient(#fff, #f2f6fd);
+  background: none;
+  position: relative;
   /* Span */
   /*  */
 }
@@ -32,8 +43,6 @@ li {
   position: absolute;
   border-radius: 55px;
   transform: rotate(60deg);
-  z-index: 11111;
-  display: none;
   background-color: #e1edff;
   width: 35rem;
   height: 33rem;
@@ -44,8 +53,6 @@ li {
   position: absolute;
   border-radius: 55px;
   transform: rotate(60deg);
-  z-index: 11111;
-  display: none;
   background-color: #cdddf6;
   width: 30rem;
   height: 30rem;
@@ -56,8 +63,6 @@ li {
   position: absolute;
   border-radius: 55px;
   transform: rotate(60deg);
-  z-index: 11111;
-  display: none;
   background-color: #c0d3f0;
   width: 25rem;
   height: 25rem;
@@ -66,7 +71,8 @@ li {
   content: "";
   background: #f2f6fd;
   position: absolute;
-  z-index: -1;
+  z-index: -111;
+  height: 100vh;
   inset: 0;
   transform: skewY(-5deg);
 }
@@ -77,12 +83,22 @@ li {
   gap: 1px;
   justify-content: space-between;
   padding: 5px 65px;
+  background-color: #f2f6fd;
+}
+.navHeroSection .mainNavbar.onscrollVisble {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background: #f2f6fd;
+  padding: 2px 25px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  z-index: 111;
+}
+.navHeroSection .mainNavbar.onscrollVisble .logoImg a img {
+  width: 7rem;
 }
 .navHeroSection .mainNavbar .menuToggle {
   display: none;
-}
-.navHeroSection .mainNavbar .logoImg {
-  z-index: 11111;
 }
 .navHeroSection .mainNavbar .logoImg a img {
   width: 12rem;
@@ -93,13 +109,49 @@ li {
   align-items: center;
   gap: 25px;
 }
+.navHeroSection .mainNavbar .ulBar .ulBarLogoImage {
+  display: none;
+}
+.navHeroSection .mainNavbar .ulBar li a {
+  font-size: 1.1rem;
+  position: relative;
+}
+.navHeroSection .mainNavbar .ulBar li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  left: 50%;
+  bottom: -6px;
+  height: 3px;
+  background-color: #3c65f5;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+.navHeroSection .mainNavbar .ulBar li a:hover::after {
+  width: 100%;
+  left: 0;
+  transform: translateX(0);
+}
+.navHeroSection .mainNavbar .ulBar li .highlight {
+  background-color: #6582eb;
+  color: #fff;
+  padding: 2px 15px;
+  border-radius: 5px;
+}
+.navHeroSection .mainNavbar .ulBar li .highlight::after {
+  display: none;
+}
 .navHeroSection .mainNavbar .contactUs {
   z-index: 111;
   background: #3c65f5;
   color: #fff;
-  padding: 5px;
+  padding: 10px 15px;
   border-radius: 5px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.navHeroSection .mainNavbar .contactUs:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .navHeroSection .heroSection {
   display: flex;
@@ -115,23 +167,31 @@ li {
 }
 .navHeroSection .heroSection .serachBarContent strong {
   font-family: Roboto, serif;
-  font-size: 2.6rem;
+  font-size: 3.2rem;
+  color: #05264e;
+  font-weight: 900;
+  z-index: 111;
 }
 .navHeroSection .heroSection .serachBarContent strong .innerStrongH {
-  color: #3c65f5;
+  font-weight: 700;
   position: relative;
+  display: inline-block;
+  color: #3c65f5;
 }
 .navHeroSection .heroSection .serachBarContent strong .innerStrongH::after {
   content: "";
-  width: 100%;
-  height: 20%;
   position: absolute;
-  left: 0px;
-  bottom: -3px;
-  background: linear-gradient(#fff, #85acff);
+  left: 0;
+  bottom: 5px;
+  width: 100%;
+  height: 20px;
+  background-color: #dfe7fc;
+  z-index: -1;
 }
 .navHeroSection .heroSection .serachBarContent p {
+  margin-top: 15px;
   font-size: 1.3rem;
+  color: #4f5e64;
 }
 .navHeroSection .heroSection .serachBarContent .btnSearch {
   margin-top: 25px;
@@ -155,11 +215,45 @@ li {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   background-color: #3c65f5;
   color: #fff;
-  border: none;
+  border-color: transparent;
 }
 .navHeroSection .heroSection .pictureContent .image {
   width: 100%;
   position: relative;
+}
+.navHeroSection .heroSection .pictureContent .image .dotBoxImage {
+  position: absolute;
+  z-index: 11;
+  top: -25px;
+  right: 31px;
+  animation: dotMove 3s infinite alternate ease-in-out;
+}
+@keyframes dotMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(30px);
+  }
+}
+.navHeroSection .heroSection .pictureContent .image .dotBoxImageSmall {
+  position: absolute;
+  z-index: 11;
+  left: -12px;
+  bottom: 15px;
+  height: 50px;
+  width: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  animation: dotMovesmall 3s infinite alternate ease-in-out;
+}
+@keyframes dotMovesmall {
+  0% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateX(15px);
+  }
 }
 .navHeroSection .heroSection .pictureContent .image .thisImg {
   width: 25em;
@@ -193,49 +287,34 @@ li {
   }
 }
 
-.nonIndexHtml {
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.nonIndexHtml::before {
+.contactUsUlbar {
   display: none;
 }
 
-@media screen and (max-width: 1235px) {
+@media screen and (max-width: 1115px) {
   .navHeroSection .spannhS {
-    top: 88px;
-    right: 50px;
-    transform: rotate(0deg);
-    border-radius: 5px;
-    display: none;
+    right: -455px;
   }
-  .navHeroSection .span1 {
-    width: 8rem;
-    height: 2rem;
+}
+@media screen and (max-width: 900px) {
+  body {
+    overflow-x: hidden;
   }
-  .navHeroSection .span2 {
-    width: 5rem;
-    height: 5rem;
-    display: none;
+  .navHeroSection {
+    margin-bottom: 95px;
   }
-  .navHeroSection .span3 {
-    width: 2rem;
-    height: 2rem;
-    display: none;
+  .navHeroSection .spannhS {
+    z-index: 11;
   }
   .navHeroSection::before {
     content: "";
-    background: #f2f6fd;
-    position: absolute;
-    z-index: -1;
-    height: 199vh;
-    inset: 0;
-    transform: skewY(-5deg);
+    height: 190vh;
   }
   .navHeroSection .mainNavbar {
     position: relative;
     justify-content: space-between;
     padding: 5px 15px;
+    flex-direction: column;
   }
   .navHeroSection .mainNavbar .menuToggle {
     background: #fff;
@@ -245,7 +324,7 @@ li {
     border: 0.1rem solid #3c65f5;
     display: block;
     position: fixed;
-    top: 100px;
+    top: 122px;
     right: -52px;
     width: 30px;
     height: 30px;
@@ -292,21 +371,51 @@ li {
     top: -5555px;
     left: 0px;
     height: 112%;
-    background-color: rgba(0, 0, 0, 0.5803921569);
+    background-color: #fff;
     z-index: 1111;
     align-items: normal;
     padding: 15px;
     transition: top 0.3s ease-in-out;
   }
+  .navHeroSection .mainNavbar .ulBar .ulBarLogoImage {
+    display: block;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    width: 15rem;
+  }
   .navHeroSection .mainNavbar .ulBar li {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #000;
   }
   .navHeroSection .mainNavbar .ulBar li a {
     font-size: 1.5rem;
+    color: #3c65f5;
+  }
+  .navHeroSection .mainNavbar .ulBar .contactUsUlbar {
+    display: block;
+    background: #3c65f5;
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
     color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    width: 10rem;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  .navHeroSection .mainNavbar .ulBar .contactUsUlbar:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   }
   .navHeroSection .mainNavbar .ulBar.ulBarActive {
     top: -5px;
+  }
+  .navHeroSection .mainNavbar .contactUs {
+    display: none;
   }
   .navHeroSection .heroSection {
     flex-direction: column-reverse;
@@ -314,17 +423,17 @@ li {
   }
 }
 @media screen and (max-width: 881px) {
-  .navHeroSection {
-    height: 88vh;
+  .navHeroSection .spannhS {
+    right: -455px;
   }
   .navHeroSection::before {
     content: "";
-    background: #f2f6fd;
-    position: absolute;
-    z-index: -1;
-    height: 155vh;
-    inset: 0;
-    transform: skewY(-5deg);
+    height: 180vh;
+  }
+  .navHeroSection .mainNavbar .contactUs {
+    font-weight: 500;
+    font-size: 0.7rem;
+    padding: 5px 15px;
   }
   .navHeroSection .heroSection {
     width: 100%;
@@ -335,17 +444,8 @@ li {
   }
 }
 @media screen and (max-width: 625px) {
-  .navHeroSection {
-    height: 88vh;
-  }
   .navHeroSection::before {
-    content: "";
-    background: #f2f6fd;
-    position: absolute;
-    z-index: -1;
-    height: 120vh;
-    inset: 0;
-    transform: skewY(-5deg);
+    height: 150vh;
   }
   .navHeroSection .mainNavbar .ulBar .contactUs {
     font-size: 0.9rem;
@@ -362,13 +462,25 @@ li {
     padding: 15px;
   }
   .navHeroSection .heroSection .serachBarContent strong {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
+  }
+  .navHeroSection .heroSection .serachBarContent strong .innerStrongH::after {
+    height: 10px;
   }
   .navHeroSection .heroSection .serachBarContent p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
   .navHeroSection .heroSection .serachBarContent .btnSearch a {
     font-size: 1.2rem;
+  }
+  .navHeroSection .heroSection .pictureContent .image .dotBoxImage {
+    height: 3.5rem;
+    top: 2px;
+    right: 20px;
+  }
+  .navHeroSection .heroSection .pictureContent .image .dotBoxImageSmall {
+    width: 4rem;
+    height: 2rem;
   }
   .navHeroSection .heroSection .pictureContent .image .thisImgBig {
     width: 15rem;
@@ -377,21 +489,23 @@ li {
     width: 10rem;
   }
 }
+@media screen and (max-width: 488px) {
+  .navHeroSection .spannhS {
+    right: -395px;
+  }
+}
 @media screen and (max-width: 388px) {
   .navHeroSection::before {
-    content: "";
-    background: #f2f6fd;
-    position: absolute;
-    z-index: -1;
-    height: 115vh;
-    inset: 0;
-    transform: skewY(-5deg);
+    height: 145vh;
+  }
+  .navHeroSection .spannhS {
+    right: -425px;
   }
   .navHeroSection .heroSection .serachBarContent strong {
-    font-size: 1.12rem;
+    font-size: 2rem;
   }
   .navHeroSection .heroSection .serachBarContent p {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
   .navHeroSection .heroSection .pictureContent .image .thisImgBig {
     margin-left: 0px;
@@ -405,10 +519,24 @@ li {
     width: 120px;
   }
 }
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(100%);
+  transition: opacity 0.9s ease-in-out, filter 0.9s ease-in-out, transform 0.9s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
 /* Jobs category Here */
 .jobsCategorySection {
-  margin-top: 265px;
+  margin-top: 150px;
   padding: 5px 55px;
+  margin-bottom: 100px;
 }
 .jobsCategorySection .jobsCategoryHead {
   font-size: 2.5rem;
@@ -440,18 +568,20 @@ li {
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info h2 {
   margin: 10px 0;
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info .details {
   display: flex;
   justify-content: space-around;
-  font-size: 14px;
+  font-size: 1rem;
   color: #555;
   margin: 5px 0;
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info p {
-  font-size: 14px;
+  font-size: 1rem;
   color: #444;
+  text-align: left;
+  padding: 0px 28px;
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons {
   display: flex;
@@ -482,47 +612,129 @@ li {
   background: #d0d0d0;
 }
 .jobsCategorySection .viewJobsBtn {
-  margin-top: 65px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2px;
 }
 .jobsCategorySection .viewJobsBtn .viewJobsCategory {
-  font-size: 1.5rem;
-  border: 1px solid #000;
+  font-size: 1.3rem;
   border-radius: 5px;
-  padding: 2px 5px;
+  padding: 5px 15px;
+  font-weight: 600;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  position: relative;
+  transition: color 0.5s ease-in-out;
+}
+.jobsCategorySection .viewJobsBtn .viewJobsCategory::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  border-radius: 5px;
+  background-color: #3c65f5;
+  z-index: -1;
+  transition: width 0.5s ease-in-out;
+}
+.jobsCategorySection .viewJobsBtn .viewJobsCategory:hover::before {
+  width: 100%;
+}
+.jobsCategorySection .viewJobsBtn .viewJobsCategory:hover {
+  color: #fff;
 }
 
 @media screen and (max-width: 887px) {
   .jobsCategorySection {
-    margin-top: 442px;
+    margin-top: 65px;
+    padding: 15px 5px;
+  }
+  .jobsCategorySection .mainJobsDiv .job-card .job-card .job-info h2 {
+    font-size: 0.5rem;
+  }
+  .jobsCategorySection .mainJobsDiv .job-card .job-card .job-info .details {
+    font-size: 0.5rem;
+  }
+  .jobsCategorySection .mainJobsDiv .job-card .job-card .job-info p {
+    font-family: 0.5rem;
+  }
+  .jobsCategorySection .mainJobsDiv .job-card .job-card .job-info .buttons button {
+    font-size: 0.1rem;
+    padding: 5px 1px;
   }
 }
-@media screen and (max-width: 625px) {
-  .jobsCategorySection {
-    margin-top: 252px;
-  }
-  .jobsCategorySection .viewJobsBtn .viewJobsCategory {
-    font-size: 1.1rem;
-  }
-}
-@media screen and (max-width: 412px) {
-  .jobsCategorySection {
-    padding: 5px 15px;
+@media screen and (max-width: 739px) {
+  .jobsCategorySection .mainJobsDiv .job-card {
+    width: 200px;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info h2 {
     font-size: 1rem;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info .details {
     font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-direction: column;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info p {
-    font-family: 0.8rem;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-direction: column;
+    align-items: normal;
+    width: 100%;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons button {
     font-size: 0.8rem;
+    padding: 5px 1px;
+  }
+}
+@media screen and (max-width: 625px) {
+  .jobsCategorySection .viewJobsBtn .viewJobsCategory {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .jobsCategorySection {
+    padding: 5px 15px;
+  }
+  .jobsCategorySection .mainJobsDiv .job-card {
+    width: 150px;
+  }
+  .jobsCategorySection .mainJobsDiv .job-card .job-info h2 {
+    font-size: 0.8rem;
+  }
+  .jobsCategorySection .mainJobsDiv .job-card .job-info .details {
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-direction: column;
+  }
+  .jobsCategorySection .mainJobsDiv .job-card .job-info p {
+    font-size: 0.6rem;
+  }
+  .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-direction: column;
+    align-items: normal;
+    width: 100%;
+  }
+  .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons button {
+    font-size: 0.5rem;
     padding: 5px 1px;
   }
 }
