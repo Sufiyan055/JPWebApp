@@ -1117,3 +1117,49 @@ $white: #fff;
     }
   }
 }
+
+.bottomWhatsapp,
+.bottomCallUs {
+  position: fixed;
+  padding: 5px;
+  box-shadow: 0px 0px 5px 1px #0000007f;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.bottomWhatsapp {
+  bottom: 15px;
+  right: 10px;
+  padding: 5px 7px;
+  background-color: #25d366;
+  color: #fff;
+  i {
+    font-size: 1.9em;
+  }
+}
+
+.bottomCallUs {
+  bottom: 63px;
+  right: 10px;
+  background-color: rgb(46, 217, 46);
+  color: #fff;
+  padding: 8px;
+  i {
+    font-size: 1.3em;
+  }
+}
+
+.gotoTop {
+  position: fixed;
+  bottom: 108px;
+  right: 10px;
+  background-color: $primaryColor;
+  color: #fff;
+  padding: 5px 6px;
+  box-shadow: 0px 0px 5px 1px #0000007f;
+  border-radius: 5px;
+  i {
+    font-size: 1.7em;
+  }
+}
