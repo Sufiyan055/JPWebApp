@@ -3,7 +3,7 @@ body {
 }
 
 .aboutUsImage {
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.4196078431), rgba(0, 0, 0, 0.2039215686)), url(/images/aboutUsImgMain.jpg);
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.4196078431), rgba(0, 0, 0, 0.2039215686)), url(../images/aboutUsImgMain.jpg);
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;

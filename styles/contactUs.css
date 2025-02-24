@@ -1,5 +1,5 @@
 .contactUsImage {
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.4196078431), rgba(0, 0, 0, 0.2039215686)), url(/images/contactImageMain.jpg);
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.4196078431), rgba(0, 0, 0, 0.2039215686)), url(../images/contactImageMain.jpg);
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;

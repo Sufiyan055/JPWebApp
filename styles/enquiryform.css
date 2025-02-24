@@ -1,5 +1,5 @@
 .tagLineBgImage {
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.4196078431), rgba(0, 0, 0, 0.2039215686)), url(/images/EnquiryFormBg.jpg);
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.4196078431), rgba(0, 0, 0, 0.2039215686)), url(../images/EnquiryFormBg.jpg);
   height: 35vh;
   background-repeat: no-repeat;
   background-size: cover;
