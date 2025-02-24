@@ -5,7 +5,7 @@
   }
 }
 .jobsCategorySection {
-  margin-top: 35px;
+  margin-top: 0px;
 }
 
 $primary-color: #3c65f5;
@@ -13,7 +13,7 @@ $secondary-color: #ffffff;
 $border-color: #ddd;
 
 .search-container {
-  margin-top: 55px;
+  margin-top: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,6 +56,26 @@ $border-color: #ddd;
     &:hover {
       background: darken($primary-color, 10%);
     }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .nonIndexHtml {
+    .mainNavbar {
+      .logoImg {
+        a {
+          img {
+            width: 7rem;
+          }
+        }
+      }
+    }
+  }
+  .search-container {
+    margin-top: 0px;
+  }
+  .jobsCategorySection {
+    margin-top: 0px;
   }
 }
 

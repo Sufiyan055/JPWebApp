@@ -7,11 +7,11 @@
 }
 
 .jobsCategorySection {
-  margin-top: 35px;
+  margin-top: 0px;
 }
 
 .search-container {
-  margin-top: 55px;
+  margin-top: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,6 +52,17 @@
   background: #0c3ff2;
 }
 
+@media screen and (max-width: 1000px) {
+  .nonIndexHtml .mainNavbar .logoImg a img {
+    width: 7rem;
+  }
+  .search-container {
+    margin-top: 0px;
+  }
+  .jobsCategorySection {
+    margin-top: 0px;
+  }
+}
 @media screen and (max-width: 400px) {
   .search-container .search-input {
     width: 100%;
