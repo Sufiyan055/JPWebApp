@@ -561,22 +561,22 @@ li {
   height: auto;
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info {
-  padding: 15px;
+  padding: 1px 4px;
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info h2 {
-  margin: 10px 0;
+  margin: 6px 0;
   font-size: 1.2rem;
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info .details {
   display: flex;
   justify-content: space-around;
-  font-size: 1rem;
-  color: #555;
+  font-size: 1.2rem;
+  color: #000;
   margin: 5px 0;
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info p {
-  font-size: 1rem;
-  color: #444;
+  font-size: 1.1rem;
+  color: #000;
   text-align: left;
   padding: 0px 28px;
 }
@@ -584,7 +584,8 @@ li {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons button {
   flex: 1;
@@ -659,7 +660,7 @@ li {
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-card .job-info .buttons button {
     font-size: 0.1rem;
-    padding: 5px 1px;
+    padding: 8px 1px;
   }
 }
 @media screen and (max-width: 739px) {
@@ -670,7 +671,7 @@ li {
     font-size: 1rem;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info .details {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -678,7 +679,7 @@ li {
     flex-direction: column;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     text-align: center;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons {
@@ -691,7 +692,7 @@ li {
     width: 100%;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons button {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding: 5px 1px;
   }
 }
@@ -702,13 +703,13 @@ li {
 }
 @media screen and (max-width: 450px) {
   .jobsCategorySection {
-    padding: 5px 15px;
+    padding: 8px 15px;
   }
   .jobsCategorySection .mainJobsDiv .job-card {
     width: 150px;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info h2 {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info .details {
     font-size: 0.6rem;
@@ -719,7 +720,7 @@ li {
     flex-direction: column;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info p {
-    font-size: 0.6rem;
+    font-size: 0.59rem;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons {
     display: flex;
@@ -731,8 +732,8 @@ li {
     width: 100%;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons button {
-    font-size: 0.5rem;
-    padding: 5px 1px;
+    font-size: 0.6rem;
+    padding: 8px 1px;
   }
 }
 /* Call To Action Section */
@@ -997,9 +998,9 @@ li {
 }
 
 .bottomWhatsapp {
-  bottom: 15px;
+  bottom: 10px;
   right: 10px;
-  padding: 5px 7px;
+  padding: 5px 8px;
   background-color: #25d366;
   color: #fff;
 }
@@ -1008,11 +1009,11 @@ li {
 }
 
 .bottomCallUs {
-  bottom: 63px;
+  bottom: 60px;
   right: 10px;
   background-color: rgb(46, 217, 46);
   color: #fff;
-  padding: 8px;
+  padding: 8px 10px;
 }
 .bottomCallUs i {
   font-size: 1.3em;
@@ -1020,7 +1021,7 @@ li {
 
 .gotoTop {
   position: fixed;
-  bottom: 108px;
+  bottom: 110px;
   right: 10px;
   background-color: #3c65f5;
   color: #fff;
