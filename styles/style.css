@@ -300,9 +300,6 @@ li {
   body {
     overflow-x: hidden;
   }
-  .navHeroSection {
-    margin-bottom: 95px;
-  }
   .navHeroSection .spannhS {
     z-index: 11;
   }

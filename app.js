@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 let ulBar = document.querySelector(".ulBar");
 let menuToggle = document.querySelector(".menuToggle");
 let mainNavbar = document.querySelector(".mainNavbar");
+let gotoTop = document.querySelector(".gotoTop");
 
 toggleNav = () => {
   ulBar.classList.toggle("ulBarActive");
@@ -74,4 +75,12 @@ function BacktoTop() {
 
 window.onscroll = function () {
   scrollForTopBtn();
+};
+
+const scrollForTopBtn = () => {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    gotoTop.style.display = "block";
+  } else {
+    gotoTop.style.display = "none";
+  }
 };
