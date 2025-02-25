@@ -1044,17 +1044,26 @@ $white: #fff;
       }
       .socioLink {
         a {
+          display: inline-flex;
+          margin-right: 5px;
+          text-align: center;
+          padding: 8px 7px;
+          border: 1px solid $primaryColor;
+          border-radius: 50%;
+          transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out,
+            color 0.3s ease-in-out;
           i {
-            margin-right: 15px;
-            font-size: 1.5rem;
+            overflow: hidden;
+            font-size: 1.3rem;
           }
-          &:nth-child(1) {
-            color: $primaryColor;
+          &:hover {
+            border: 1px solid transparent;
+            background-color: $primaryColor;
+            color: $white;
           }
-
-          &:nth-child(3) {
-            color: red;
-          }
+        }
+        .faLinkdedin {
+          padding: 8px 9px;
         }
       }
     }
