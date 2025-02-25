@@ -46,6 +46,9 @@ $white: #fff;
 .navHeroSection {
   background: none;
   position: relative;
+  &.holdSpaceWhenScroll {
+    padding-top: 8.438rem;
+  }
   @mixin spanContentForDesign {
     top: -80px;
     right: -330px;
@@ -87,6 +90,7 @@ $white: #fff;
     justify-content: space-between;
     padding: 5px 65px;
     background-color: #f2f6fd;
+
     &.onscrollVisble {
       position: fixed;
       width: 100%;

@@ -37,6 +37,9 @@ li {
   /* Span */
   /*  */
 }
+.navHeroSection.holdSpaceWhenScroll {
+  padding-top: 8.438rem;
+}
 .navHeroSection .span1 {
   top: -80px;
   right: -330px;

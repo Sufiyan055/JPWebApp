@@ -41,6 +41,7 @@ let ulBar = document.querySelector(".ulBar");
 let menuToggle = document.querySelector(".menuToggle");
 let mainNavbar = document.querySelector(".mainNavbar");
 let gotoTop = document.querySelector(".gotoTop");
+let navHeroSection = document.querySelector(".navHeroSection");
 
 toggleNav = () => {
   ulBar.classList.toggle("ulBarActive");
@@ -50,8 +51,10 @@ toggleNav = () => {
 const mainNavbarVisible = () => {
   if (window.scrollY >= 500) {
     mainNavbar.classList.add("onscrollVisble");
+    navHeroSection.classList.add("holdSpaceWhenScroll");
   } else {
     mainNavbar.classList.remove("onscrollVisble");
+    navHeroSection.classList.remove("holdSpaceWhenScroll");
   }
 };
 
