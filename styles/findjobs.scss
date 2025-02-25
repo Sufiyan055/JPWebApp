@@ -79,6 +79,14 @@ $border-color: #ddd;
   }
 }
 
+@media screen and (max-width: 900px) {
+  .navHeroSection {
+    &.holdSpaceWhenScroll {
+      padding-top: 5rem;
+    }
+  }
+}
+
 @media screen and (max-width: 400px) {
   .search-container {
     .search-input {
