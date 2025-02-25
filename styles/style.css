@@ -952,6 +952,11 @@ li {
 .mainFooterSection .footerBox .logoHere .socioLink .faLinkdedin {
   padding: 8px 9px;
 }
+@media (max-width: 600px) {
+  .mainFooterSection .footerBox .logoHere .socioLink .faLinkdedin {
+    padding: 8px 10px;
+  }
+}
 .mainFooterSection .footerBox .officesFooter {
   width: 40%;
   display: flex;
