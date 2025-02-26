@@ -47,7 +47,7 @@ $white: #fff;
   background: none;
   position: relative;
   &.holdSpaceWhenScroll {
-    padding-top: 8.438rem;
+    padding-top: 8rem;
   }
   @mixin spanContentForDesign {
     top: -80px;
@@ -104,6 +104,7 @@ $white: #fff;
         a {
           img {
             width: 7rem;
+            padding: 7px 2px 0px;
           }
         }
       }
@@ -625,11 +626,16 @@ $white: #fff;
       max-width: 350px;
       text-align: center;
 
-      .job-image {
-        width: 100%;
-        height: auto;
+      .imageBox {
+        height: 12rem;
+        border-radius: 12px;
+        overflow: hidden;
+        .job-image {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
       }
-
       .job-info {
         padding: 1px 4px;
 
@@ -644,13 +650,16 @@ $white: #fff;
           font-size: 1.2rem;
           color: #000;
           margin: 5px 0;
+          span:nth-child(2) {
+            margin-left: 0.9rem;
+          }
         }
 
         p {
-          font-size: 1.1rem;
+          font-size: 1.2rem;
           color: #000;
           text-align: left;
-          padding: 0px 28px;
+          padding: 0px -28px;
         }
 
         .buttons {
@@ -660,30 +669,39 @@ $white: #fff;
           margin-top: 10px;
           margin-bottom: 5px;
 
-          button {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
+          a {
+            width: 100%;
             cursor: pointer;
-            font-size: 14px;
             transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-          }
-
-          .apply {
-            background: $primaryColor;
-            color: white;
-
-            &:hover {
-              background: $primaryColorHover;
+            border-radius: 12px;
+            text-transform: uppercase;
+            button {
+              padding: 0.3rem 0.3rem;
+              cursor: pointer;
+              border-radius: 12px;
+              border: none;
+              width: 100%;
+              height: 100%;
             }
           }
 
-          .description {
-            background: #e0e0e0;
+          a {
+            .apply {
+              background: $primaryColor;
+              color: white;
 
-            &:hover {
-              background: #d0d0d0;
+              &:hover {
+                background: $primaryColorHover;
+              }
+            }
+          }
+          a {
+            .description {
+              background: #e0e0e0;
+
+              &:hover {
+                background: #d0d0d0;
+              }
             }
           }
         }
@@ -743,9 +761,11 @@ $white: #fff;
               font-family: 0.5rem;
             }
             .buttons {
-              button {
-                font-size: 0.1rem;
-                padding: 8px 1px;
+              a {
+                button {
+                  font-size: 0.1rem;
+                  padding: 8px 1px;
+                }
               }
             }
           }
@@ -760,6 +780,9 @@ $white: #fff;
     .mainJobsDiv {
       .job-card {
         width: 200px;
+        .imageBox {
+          height: 8rem;
+        }
         .job-info {
           h2 {
             font-size: 1rem;
@@ -768,6 +791,9 @@ $white: #fff;
             font-size: 0.9rem;
             @include flexcontent(5px);
             flex-direction: column;
+            span:nth-child(2) {
+              margin-left: 0rem;
+            }
           }
           p {
             font-size: 0.9rem;
@@ -778,9 +804,11 @@ $white: #fff;
             flex-direction: column;
             align-items: normal;
             width: 100%;
-            button {
-              font-size: 0.9rem;
-              padding: 5px 1px;
+            a {
+              button {
+                font-size: 0.7rem;
+                padding: 5px 1px;
+              }
             }
           }
         }
@@ -807,24 +835,26 @@ $white: #fff;
         width: 150px;
         .job-info {
           h2 {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
           }
           .details {
-            font-size: 0.6rem;
+            font-size: 0.8rem;
             @include flexcontent(5px);
             flex-direction: column;
           }
           p {
-            font-size: 0.59rem;
+            font-size: 0.8rem;
           }
           .buttons {
             @include flexcontent(5px);
             flex-direction: column;
             align-items: normal;
             width: 100%;
-            button {
-              font-size: 0.6rem;
-              padding: 8px 1px;
+            a {
+              button {
+                font-size: 0.6rem;
+                padding: 8px 1px;
+              }
             }
           }
         }
