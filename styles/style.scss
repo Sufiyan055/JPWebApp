@@ -983,7 +983,7 @@ $white: #fff;
 .achivementCount {
   margin-top: 55px;
   background-color: #fff;
-  padding: 40px 0;
+  padding: 40px 25px;
   text-align: center;
 
   .wrapper {
@@ -998,7 +998,7 @@ $white: #fff;
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-width: 150px;
+    width: 30%;
 
     div {
       display: flex;
@@ -1020,6 +1020,7 @@ $white: #fff;
       margin-top: 8px;
     }
     .pLine {
+      margin-top: 1rem;
       font-size: 1.2rem;
       width: 80%;
     }
@@ -1029,6 +1030,11 @@ $white: #fff;
     .achivementCount {
       .wrapper {
         flex-wrap: wrap;
+        .container {
+          .pLine {
+            font-size: 1rem;
+          }
+        }
       }
     }
   }
@@ -1037,6 +1043,10 @@ $white: #fff;
     .wrapper {
       flex-direction: column;
       gap: 20px;
+
+      .container {
+        width: 100%;
+      }
     }
 
     .container div {

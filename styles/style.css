@@ -870,7 +870,7 @@ li {
 .achivementCount {
   margin-top: 55px;
   background-color: #fff;
-  padding: 40px 0;
+  padding: 40px 25px;
   text-align: center;
 }
 .achivementCount .wrapper {
@@ -884,7 +884,7 @@ li {
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-width: 150px;
+  width: 30%;
 }
 .achivementCount .container div {
   display: flex;
@@ -904,6 +904,7 @@ li {
   margin-top: 8px;
 }
 .achivementCount .container .pLine {
+  margin-top: 1rem;
   font-size: 1.2rem;
   width: 80%;
 }
@@ -911,11 +912,17 @@ li {
   .achivementCount .achivementCount .wrapper {
     flex-wrap: wrap;
   }
+  .achivementCount .achivementCount .wrapper .container .pLine {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 768px) {
   .achivementCount .wrapper {
     flex-direction: column;
     gap: 20px;
+  }
+  .achivementCount .wrapper .container {
+    width: 100%;
   }
   .achivementCount .container div {
     font-size: 2rem;
