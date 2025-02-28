@@ -398,7 +398,7 @@ $white: #fff;
         .ulBarLogoImage {
           display: block;
           position: absolute;
-          top: -12px;
+          top: -1px;
           left: 50%;
           transform: translate(-50%, 10%);
           width: 15rem;
@@ -863,6 +863,8 @@ $white: #fff;
   }
 }
 
+/* Slideshow Image */
+
 /* Call To Action Section */
 
 .callToActionContent {
@@ -1103,7 +1105,7 @@ $white: #fff;
           }
         }
         .faLinkdedin {
-          padding: 8px 9px;
+          padding: 8px 10px;
           @media (max-width: 600px) {
             padding: 8px 10px;
           }
@@ -1182,6 +1184,7 @@ $white: #fff;
   border-radius: 50%;
   cursor: pointer;
   user-select: none;
+  z-index: 1;
 }
 
 .bottomWhatsapp {
@@ -1216,6 +1219,7 @@ $white: #fff;
   box-shadow: 0px 0px 5px 1px #0000007f;
   border-radius: 5px;
   cursor: pointer;
+  z-index: 1;
   i {
     font-size: 1.7em;
   }
