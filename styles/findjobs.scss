@@ -8,100 +8,268 @@
   margin-top: 0px;
 }
 
+.findJobsTagLine {
+  background: linear-gradient(45deg, #000000d2, #0000004b),
+    url(../images/findjobsImg.jpg);
+  background-position-y: 37%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  color: #fff;
+  flex-direction: column;
+  height: 45vh;
+  padding: 5px 10px;
+  background-attachment: fixed;
+  h2 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
 $primary-color: #3c65f5;
 $secondary-color: #ffffff;
 $border-color: #ddd;
 
-.search-container {
-  margin-top: 8px;
+.mainSearchBar {
+  background-color: #f8f9fa;
+  padding: 18px 2px;
+  margin: 0px auto 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  padding: 20px;
-  flex-wrap: wrap;
 
-  .search-input {
-    padding: 10px;
-    width: 250px;
-    border: 1px solid $border-color;
-    border-radius: 5px;
-    outline: none;
-  }
-
-  .location-dropdown {
-    padding: 10px;
-    border: 1px solid $border-color;
-    border-radius: 5px;
-    outline: none;
-    background: $secondary-color;
-  }
-
-  .search-button {
-    padding: 10px 15px;
-    border: none;
-    background: $primary-color;
-    color: $secondary-color;
-    border-radius: 5px;
-    cursor: pointer;
+  .subMainSearchBar {
     display: flex;
-    align-items: center;
-    gap: 5px;
-    font-weight: bold;
-
-    i {
-      font-size: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    z-index: 111;
+    padding: 10px;
+    border-radius: 30rem;
+    .searchBarHere {
+      width: 50%;
+      border-right: 0.1rem solid #eee;
+      .searchInputBar {
+        border-top-left-radius: 30rem;
+        border-bottom-left-radius: 30rem;
+        width: 100%;
+        height: 100%;
+        font-family: Poppins, sans-serif;
+        padding: 1px 15px;
+        border: none;
+        outline: none;
+        font-size: 1.2rem;
+      }
     }
-
-    &:hover {
-      background: darken($primary-color, 10%);
+    .btnSearchHere {
+      width: 20%;
+      button {
+        width: 100%;
+        height: 100%;
+        font-family: Poppins, sans-serif;
+        font-size: 1.2rem;
+        background-color: #3c65f5;
+        color: #fff;
+        border: 1px solid #3c65f5;
+        border-top-right-radius: 30rem;
+        border-bottom-right-radius: 30rem;
+        cursor: pointer;
+        i {
+          display: none;
+        }
+      }
     }
-  }
-}
+    .wrapper {
+      width: 370px;
+      position: relative;
+      .select-btn,
+      li {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+      .content {
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+      }
+      .options {
+        height: 100%;
+        width: 95%;
+      }
 
-@media screen and (max-width: 1000px) {
-  .nonIndexHtml {
-    .mainNavbar {
-      .logoImg {
-        a {
-          img {
-            width: 7rem;
+      .select-btn {
+        height: 65px;
+        padding: 0 20px;
+        font-size: 22px;
+        background: #fff;
+        justify-content: space-between;
+
+        i {
+          font-size: 31px;
+          transition: transform 0.3s linear;
+        }
+      }
+
+      &.active {
+        .select-btn i {
+          transform: rotate(-180deg);
+        }
+        .content {
+          display: block;
+        }
+      }
+
+      .content {
+        display: none;
+        padding: 20px;
+        margin-top: 15px;
+        background: #fff;
+        border-radius: 7px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+        .search {
+          position: relative;
+
+          i {
+            top: 50%;
+            left: 15px;
+            color: #999;
+            font-size: 20px;
+            pointer-events: none;
+            transform: translateY(-50%);
+            position: absolute;
+          }
+
+          input {
+            height: 50px;
+            width: 100%;
+            outline: none;
+            font-size: 17px;
+            border-radius: 5px;
+            padding: 0 20px 0 43px;
+            border: 1px solid #b3b3b3;
+
+            &:focus {
+              padding-left: 42px;
+              border: 2px solid #4285f4;
+            }
+
+            &::placeholder {
+              color: #bfbfbf;
+            }
+          }
+        }
+
+        .options {
+          margin-top: 10px;
+          max-height: 250px;
+          overflow-y: auto;
+          padding-right: 7px;
+
+          &::-webkit-scrollbar {
+            width: 7px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 25px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 25px;
+
+            &:hover {
+              background: #b3b3b3;
+            }
+          }
+
+          li {
+            height: 50px;
+            padding: 0 13px;
+            font-size: 21px;
+
+            &:hover,
+            &.selected {
+              border-radius: 5px;
+              background: #f2f2f2;
+            }
           }
         }
       }
     }
   }
-  .search-container {
-    margin-top: 0px;
-  }
-  .jobsCategorySection {
-    margin-top: 0px;
-  }
 }
 
-@media screen and (max-width: 900px) {
-  .navHeroSection {
-    &.holdSpaceWhenScroll {
-      padding-top: 5rem;
+@media screen and (max-width: 612px) {
+  .mainSearchBar {
+    padding: 5px 0px;
+    .subMainSearchBar {
+      width: 90%;
+      padding: 0px;
+      .searchBarHere {
+        .searchInputBar {
+          font-size: 0.8rem;
+        }
+      }
+      .wrapper {
+        .select-btn {
+          span {
+            font-size: 0.8rem;
+          }
+        }
+      }
+      .btnSearchHere {
+        button {
+          font-size: 0.8rem;
+          span {
+            display: none;
+          }
+          i {
+            display: block;
+            font-size: 1rem;
+          }
+        }
+      }
     }
   }
 }
 
 @media screen and (max-width: 400px) {
-  .search-container {
-    .search-input {
-      width: 100%;
+  .mainSearchBar {
+    .subMainSearchBar {
+      flex-direction: column;
+      .searchBarHere {
+        width: 100%;
+        height: 3rem;
+        border-right: none;
+        border-bottom: 0.1rem solid #eee;
+        .searchInputBar {
+          height: 100%;
+          padding: 5px 15px;
+          border-radius: 0px;
+        }
+      }
+      .btnSearchHere {
+        width: 100%;
+        button {
+          border-radius: 0px;
+          width: 100%;
+          height: 2rem;
+          span {
+            display: block;
+          }
+          i {
+            display: none;
+          }
+        }
+      }
     }
-  }
-}
-
-@media screen and (max-width: 255px) {
-  .search-container {
-    flex-direction: column;
-  }
-  .search-input,
-  .location-dropdown,
-  .search-button {
-    width: 100%;
   }
 }

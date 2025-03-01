@@ -541,29 +541,33 @@ li {
 }
 .jobsCategorySection .jobsCategoryHead {
   font-size: 2.5rem;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   text-align: center;
 }
 .jobsCategorySection .mainJobsDiv {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 30px;
   flex-wrap: wrap;
   margin: 0;
+  margin-top: 15px;
 }
 .jobsCategorySection .mainJobsDiv .job-card {
   background: white;
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   max-width: 350px;
   text-align: center;
+  padding: 0px 25px 5px;
+  border: 0.01rem solid #3c65f5;
 }
 .jobsCategorySection .mainJobsDiv .job-card .imageBox {
   height: 12rem;
   border-radius: 12px;
   overflow: hidden;
+  margin-top: -15px;
+  border: 0.1rem solid #3c65f5;
 }
 .jobsCategorySection .mainJobsDiv .job-card .imageBox .job-image {
   height: 100%;
@@ -604,30 +608,32 @@ li {
 .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons a {
   width: 100%;
   cursor: pointer;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
   border-radius: 12px;
   text-transform: uppercase;
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons a button {
-  padding: 0.3rem 0.3rem;
+  padding: 0.7rem 0.3rem;
   cursor: pointer;
-  border-radius: 12px;
   border: none;
   width: 100%;
   height: 100%;
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons a .apply {
   background: #3c65f5;
-  color: white;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  color: #fff;
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons a .apply:hover {
-  background: #6582eb;
+  background: #87ceeb;
+  color: #000;
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons a .description {
   background: #e0e0e0;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons a .description:hover {
-  background: #d0d0d0;
+  background: #87ceeb;
+  color: #fff;
 }
 .jobsCategorySection .viewJobsBtn {
   margin-top: 50px;
@@ -669,16 +675,19 @@ li {
     margin-top: 65px;
     padding: 15px 5px;
   }
-  .jobsCategorySection .mainJobsDiv .job-card .job-card .job-info h2 {
+  .jobsCategorySection .mainJobsDiv .job-card {
+    margin-top: 15px;
+  }
+  .jobsCategorySection .mainJobsDiv .job-card .job-info h2 {
     font-size: 0.5rem;
   }
-  .jobsCategorySection .mainJobsDiv .job-card .job-card .job-info .details {
+  .jobsCategorySection .mainJobsDiv .job-card .job-info .details {
     font-size: 0.5rem;
   }
-  .jobsCategorySection .mainJobsDiv .job-card .job-card .job-info p {
+  .jobsCategorySection .mainJobsDiv .job-card .job-info p {
     font-family: 0.5rem;
   }
-  .jobsCategorySection .mainJobsDiv .job-card .job-card .job-info .buttons a button {
+  .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons a button {
     font-size: 0.1rem;
     padding: 8px 1px;
   }
@@ -723,13 +732,22 @@ li {
   }
 }
 @media screen and (max-width: 625px) {
+  .jobsCategorySection .mainJobsDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  .jobsCategorySection .mainJobsDiv .job-card {
+    padding: 0px 8px 5px;
+  }
   .jobsCategorySection .viewJobsBtn .viewJobsCategory {
     font-size: 0.9rem;
   }
 }
 @media screen and (max-width: 450px) {
   .jobsCategorySection {
-    padding: 8px 15px;
+    padding: 8px 2px;
   }
   .jobsCategorySection .mainJobsDiv .job-card {
     width: 150px;
@@ -762,7 +780,159 @@ li {
     padding: 8px 1px;
   }
 }
-/* Slideshow Image */
+/* Achivement Counts */
+.achivementCount {
+  margin-top: 55px;
+  background-color: #f8f9fa;
+  padding: 40px 25px;
+  text-align: center;
+}
+.achivementCount .wrapper {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+.achivementCount .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 30%;
+}
+.achivementCount .container div {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+.achivementCount .container div .plusNumCount {
+  font-size: 2rem;
+  margin-left: 5px;
+}
+.achivementCount .container .text {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+  margin-top: 8px;
+}
+.achivementCount .container .pLine {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  width: 80%;
+}
+@media screen and (max-width: 1253px) {
+  .achivementCount .achivementCount .wrapper {
+    flex-wrap: wrap;
+  }
+  .achivementCount .achivementCount .wrapper .container .pLine {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .achivementCount .wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .achivementCount .wrapper .container {
+    width: 100%;
+  }
+  .achivementCount .container div {
+    font-size: 2rem;
+  }
+  .achivementCount .text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tiara Awards */
+.awards {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 15px;
+  padding: 15px 155px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  scrollbar-width: none;
+}
+.awards .imageAwardBox {
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+}
+.awards .imageAwardBox img {
+  transition: scale 0.6s ease-in-out;
+}
+.awards .imageAwardBox p {
+  position: absolute;
+  bottom: -455px;
+  left: 0px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  font-size: 1.3rem;
+  font-family: Poppins, sans-serif;
+  line-height: 2rem;
+  transition: bottom 0.6s ease-in-out;
+}
+.awards .imageAwardBox:hover p {
+  bottom: 0px;
+}
+.awards .imageAwardBox:hover img {
+  scale: 1.1;
+}
+
+@media screen and (max-width: 1090px) {
+  .awards {
+    padding: 15px;
+  }
+  .awards .imageAwardBox p {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 719px) {
+  .awards {
+    padding: 1px;
+  }
+  .awards .imageAwardBox p {
+    font-size: 0.7rem;
+    line-height: 2;
+  }
+}
+@media screen and (max-width: 500px) {
+  .awards {
+    padding: 15px;
+    grid-template-columns: auto auto;
+  }
+  .awards .imageAwardBox p {
+    font-size: 0.7rem;
+    line-height: 2;
+    padding: 1px;
+  }
+}
+.wordBeforeSuccessLine {
+  margin-top: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+  align-items: normal;
+  padding: 0px 15rem;
+}
+.wordBeforeSuccessLine strong {
+  font-size: 3rem;
+  text-transform: capitalize;
+  font-family: Poppins, sans-serif;
+  line-height: 1;
+}
+.wordBeforeSuccessLine strong:nth-child(2) {
+  color: #2563eb;
+}
+
 /* Call To Action Section */
 .callToActionContent {
   font-family: Arial, sans-serif;
@@ -867,76 +1037,9 @@ li {
     justify-content: center;
   }
 }
-/* Achivement Counts */
-.achivementCount {
-  margin-top: 55px;
-  background-color: #fff;
-  padding: 40px 25px;
-  text-align: center;
-}
-.achivementCount .wrapper {
-  display: flex;
-  justify-content: center;
-  justify-content: space-evenly;
-}
-.achivementCount .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 30%;
-}
-.achivementCount .container div {
-  display: flex;
-  align-items: center;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #2563eb;
-}
-.achivementCount .container div .plusNumCount {
-  font-size: 2rem;
-  margin-left: 5px;
-}
-.achivementCount .container .text {
-  font-size: 2rem;
-  color: #333;
-  font-weight: 600;
-  margin-top: 8px;
-}
-.achivementCount .container .pLine {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  width: 80%;
-}
-@media screen and (max-width: 1253px) {
-  .achivementCount .achivementCount .wrapper {
-    flex-wrap: wrap;
-  }
-  .achivementCount .achivementCount .wrapper .container .pLine {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 768px) {
-  .achivementCount .wrapper {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .achivementCount .wrapper .container {
-    width: 100%;
-  }
-  .achivementCount .container div {
-    font-size: 2rem;
-  }
-  .achivementCount .text {
-    font-size: 0.9rem;
-  }
-}
-
 /* Footer Section */
 .mainFooterSection {
   background: linear-gradient(#f2f6fd, #fff);
-  margin-top: 102px;
   padding: 15px;
 }
 .mainFooterSection .footerBox {

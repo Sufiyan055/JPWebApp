@@ -10,76 +10,235 @@
   margin-top: 0px;
 }
 
-.search-container {
-  margin-top: 8px;
+.findJobsTagLine {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.8235294118), rgba(0, 0, 0, 0.2941176471)), url(../images/findjobsImg.jpg);
+  background-position-y: 37%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  color: #fff;
+  flex-direction: column;
+  height: 45vh;
+  padding: 5px 10px;
+  background-attachment: fixed;
+}
+.findJobsTagLine h2 {
+  font-size: 3rem;
+}
+.findJobsTagLine p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.mainSearchBar {
+  background-color: #f8f9fa;
+  padding: 18px 2px;
+  margin: 0px auto 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  padding: 20px;
-  flex-wrap: wrap;
 }
-.search-container .search-input {
+.mainSearchBar .subMainSearchBar {
+  display: flex;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  z-index: 111;
   padding: 10px;
-  width: 250px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  outline: none;
+  border-radius: 30rem;
 }
-.search-container .location-dropdown {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  outline: none;
-  background: #ffffff;
+.mainSearchBar .subMainSearchBar .searchBarHere {
+  width: 50%;
+  border-right: 0.1rem solid #eee;
 }
-.search-container .search-button {
-  padding: 10px 15px;
+.mainSearchBar .subMainSearchBar .searchBarHere .searchInputBar {
+  border-top-left-radius: 30rem;
+  border-bottom-left-radius: 30rem;
+  width: 100%;
+  height: 100%;
+  font-family: Poppins, sans-serif;
+  padding: 1px 15px;
   border: none;
-  background: #3c65f5;
-  color: #ffffff;
-  border-radius: 5px;
+  outline: none;
+  font-size: 1.2rem;
+}
+.mainSearchBar .subMainSearchBar .btnSearchHere {
+  width: 20%;
+}
+.mainSearchBar .subMainSearchBar .btnSearchHere button {
+  width: 100%;
+  height: 100%;
+  font-family: Poppins, sans-serif;
+  font-size: 1.2rem;
+  background-color: #3c65f5;
+  color: #fff;
+  border: 1px solid #3c65f5;
+  border-top-right-radius: 30rem;
+  border-bottom-right-radius: 30rem;
   cursor: pointer;
+}
+.mainSearchBar .subMainSearchBar .btnSearchHere button i {
+  display: none;
+}
+.mainSearchBar .subMainSearchBar .wrapper {
+  width: 370px;
+  position: relative;
+}
+.mainSearchBar .subMainSearchBar .wrapper .select-btn,
+.mainSearchBar .subMainSearchBar .wrapper li {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-weight: bold;
+  cursor: pointer;
 }
-.search-container .search-button i {
-  font-size: 14px;
+.mainSearchBar .subMainSearchBar .wrapper .content {
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
 }
-.search-container .search-button:hover {
-  background: #0c3ff2;
+.mainSearchBar .subMainSearchBar .wrapper .options {
+  height: 100%;
+  width: 95%;
+}
+.mainSearchBar .subMainSearchBar .wrapper .select-btn {
+  height: 65px;
+  padding: 0 20px;
+  font-size: 22px;
+  background: #fff;
+  justify-content: space-between;
+}
+.mainSearchBar .subMainSearchBar .wrapper .select-btn i {
+  font-size: 31px;
+  transition: transform 0.3s linear;
+}
+.mainSearchBar .subMainSearchBar .wrapper.active .select-btn i {
+  transform: rotate(-180deg);
+}
+.mainSearchBar .subMainSearchBar .wrapper.active .content {
+  display: block;
+}
+.mainSearchBar .subMainSearchBar .wrapper .content {
+  display: none;
+  padding: 20px;
+  margin-top: 15px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.mainSearchBar .subMainSearchBar .wrapper .content .search {
+  position: relative;
+}
+.mainSearchBar .subMainSearchBar .wrapper .content .search i {
+  top: 50%;
+  left: 15px;
+  color: #999;
+  font-size: 20px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  position: absolute;
+}
+.mainSearchBar .subMainSearchBar .wrapper .content .search input {
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  border-radius: 5px;
+  padding: 0 20px 0 43px;
+  border: 1px solid #b3b3b3;
+}
+.mainSearchBar .subMainSearchBar .wrapper .content .search input:focus {
+  padding-left: 42px;
+  border: 2px solid #4285f4;
+}
+.mainSearchBar .subMainSearchBar .wrapper .content .search input::-moz-placeholder {
+  color: #bfbfbf;
+}
+.mainSearchBar .subMainSearchBar .wrapper .content .search input::placeholder {
+  color: #bfbfbf;
+}
+.mainSearchBar .subMainSearchBar .wrapper .content .options {
+  margin-top: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 7px;
+}
+.mainSearchBar .subMainSearchBar .wrapper .content .options::-webkit-scrollbar {
+  width: 7px;
+}
+.mainSearchBar .subMainSearchBar .wrapper .content .options::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.mainSearchBar .subMainSearchBar .wrapper .content .options::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 25px;
+}
+.mainSearchBar .subMainSearchBar .wrapper .content .options::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+}
+.mainSearchBar .subMainSearchBar .wrapper .content .options li {
+  height: 50px;
+  padding: 0 13px;
+  font-size: 21px;
+}
+.mainSearchBar .subMainSearchBar .wrapper .content .options li:hover, .mainSearchBar .subMainSearchBar .wrapper .content .options li.selected {
+  border-radius: 5px;
+  background: #f2f2f2;
 }
 
-@media screen and (max-width: 1000px) {
-  .nonIndexHtml .mainNavbar .logoImg a img {
-    width: 7rem;
+@media screen and (max-width: 612px) {
+  .mainSearchBar {
+    padding: 5px 0px;
   }
-  .search-container {
-    margin-top: 0px;
+  .mainSearchBar .subMainSearchBar {
+    width: 90%;
+    padding: 0px;
   }
-  .jobsCategorySection {
-    margin-top: 0px;
+  .mainSearchBar .subMainSearchBar .searchBarHere .searchInputBar {
+    font-size: 0.8rem;
   }
-}
-@media screen and (max-width: 900px) {
-  .navHeroSection.holdSpaceWhenScroll {
-    padding-top: 5rem;
+  .mainSearchBar .subMainSearchBar .wrapper .select-btn span {
+    font-size: 0.8rem;
+  }
+  .mainSearchBar .subMainSearchBar .btnSearchHere button {
+    font-size: 0.8rem;
+  }
+  .mainSearchBar .subMainSearchBar .btnSearchHere button span {
+    display: none;
+  }
+  .mainSearchBar .subMainSearchBar .btnSearchHere button i {
+    display: block;
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 400px) {
-  .search-container .search-input {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 255px) {
-  .search-container {
+  .mainSearchBar .subMainSearchBar {
     flex-direction: column;
   }
-  .search-input,
-  .location-dropdown,
-  .search-button {
+  .mainSearchBar .subMainSearchBar .searchBarHere {
     width: 100%;
+    height: 3rem;
+    border-right: none;
+    border-bottom: 0.1rem solid #eee;
+  }
+  .mainSearchBar .subMainSearchBar .searchBarHere .searchInputBar {
+    height: 100%;
+    padding: 5px 15px;
+    border-radius: 0px;
+  }
+  .mainSearchBar .subMainSearchBar .btnSearchHere {
+    width: 100%;
+  }
+  .mainSearchBar .subMainSearchBar .btnSearchHere button {
+    border-radius: 0px;
+    width: 100%;
+    height: 2rem;
+  }
+  .mainSearchBar .subMainSearchBar .btnSearchHere button span {
+    display: block;
+  }
+  .mainSearchBar .subMainSearchBar .btnSearchHere button i {
+    display: none;
   }
 }/*# sourceMappingURL=findjobs.css.map */

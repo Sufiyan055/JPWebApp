@@ -10,8 +10,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/findjobs.css" />
+
     <title>Jobs - Tiara</title>
   </head>
   <body>
@@ -40,9 +45,49 @@
       </nav>
     </header>
 
+    <section class="findJobsTagLine">
+      <h2>International Jobs</h2>
+      <p>
+        Unlock your potential with our exciting job opportunities! Whether
+        you're looking for a fresh start or aiming to advance your career, now
+        is the time to take action. Join thousands who have found success
+        through our platform and step into a brighter future today!
+      </p>
+    </section>
+
     <!-- Jobs Category Section -->
 
-    <div class="search-container">
+    <div class="mainSearchBar">
+      <div class="subMainSearchBar">
+        <div class="searchBarHere">
+          <input
+            type="search"
+            placeholder="Search Role"
+            class="searchInputBar"
+          />
+        </div>
+        <div class="wrapper">
+          <div class="select-btn">
+            <span>Select Country</span>
+            <i class="uil uil-angle-down"></i>
+          </div>
+          <div class="content">
+            <div class="search">
+              <i class="uil uil-search"></i>
+              <input spellcheck="false" type="text" placeholder="Search" />
+            </div>
+            <ul class="options"></ul>
+          </div>
+        </div>
+        <div class="btnSearchHere">
+          <button>
+            <span>Search</span> <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--     <div class="search-container">
       <input
         type="text"
         class="search-input"
@@ -61,7 +106,7 @@
         <i class="fas fa-search"></i> Search
       </button>
     </div>
-
+ -->
     <section class="jobsCategorySection">
       <div class="mainJobsDiv">
         <div class="job-card hidden">
