@@ -95,7 +95,7 @@ li {
   background: #f2f6fd;
   padding: 0px 25px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  z-index: 111;
+  z-index: 1111;
 }
 .navHeroSection .mainNavbar.onscrollVisble .logoImg a img {
   width: 7rem;
@@ -567,7 +567,7 @@ li {
   border-radius: 12px;
   overflow: hidden;
   margin-top: -15px;
-  border: 0.1rem solid #3c65f5;
+  border: 0.1rem solid #817979;
 }
 .jobsCategorySection .mainJobsDiv .job-card .imageBox .job-image {
   height: 100%;
@@ -679,16 +679,16 @@ li {
     margin-top: 15px;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info h2 {
-    font-size: 0.5rem;
+    font-size: 0.9rem;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info .details {
-    font-size: 0.5rem;
+    font-size: 0.9rem;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info p {
-    font-family: 0.5rem;
+    font-size: 0.9rem;
   }
   .jobsCategorySection .mainJobsDiv .job-card .job-info .buttons a button {
-    font-size: 0.1rem;
+    font-size: 0.7rem;
     padding: 8px 1px;
   }
 }
@@ -933,6 +933,21 @@ li {
   color: #2563eb;
 }
 
+@media screen and (max-width: 1008px) {
+  .wordBeforeSuccessLine {
+    align-items: center;
+    padding: 3rem;
+    margin-bottom: -5rem;
+  }
+  .wordBeforeSuccessLine strong {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .wordBeforeSuccessLine strong {
+    font-size: 1.5rem;
+  }
+}
 /* Call To Action Section */
 .callToActionContent {
   font-family: Arial, sans-serif;
@@ -1037,6 +1052,96 @@ li {
     justify-content: center;
   }
 }
+/* Form */
+.popUpJobFormSection {
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 3rem;
+  width: 60%;
+  overflow: hidden;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  z-index: 1111;
+  border-radius: 1rem;
+}
+@media (max-width: 586px) {
+  .popUpJobFormSection {
+    width: 95%;
+  }
+}
+.popUpJobFormSection .togglePopUp {
+  right: 0px;
+  top: 0px;
+  position: absolute;
+  color: red;
+  font-size: 1.9rem;
+  cursor: pointer;
+  padding: 5px;
+  background-color: rgba(122, 122, 122, 0.2941176471);
+}
+.popUpJobFormSection.openJobApplyForm {
+  display: block;
+}
+.popUpJobFormSection .leave-message .formHere {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+  align-items: normal;
+}
+.popUpJobFormSection .leave-message .formHere label {
+  margin-top: 0.6rem;
+  font-family: Poppins, sans-serif;
+}
+.popUpJobFormSection .leave-message .formHere input {
+  padding: 0.3rem;
+}
+.popUpJobFormSection .leave-message .formHere input::-moz-placeholder {
+  font-family: Poppins, sans-serif;
+}
+.popUpJobFormSection .leave-message .formHere input::placeholder {
+  font-family: Poppins, sans-serif;
+}
+.popUpJobFormSection .leave-message .formHere .emailWhatsappBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 1rem;
+}
+.popUpJobFormSection .leave-message .formHere .emailWhatsappBtn button,
+.popUpJobFormSection .leave-message .formHere .emailWhatsappBtn .whatsapBtn {
+  flex: 1;
+  color: #fff;
+  padding: 0.5rem 0.6rem;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+}
+@media (max-width: 586px) {
+  .popUpJobFormSection .leave-message .formHere .emailWhatsappBtn button,
+  .popUpJobFormSection .leave-message .formHere .emailWhatsappBtn .whatsapBtn {
+    font-size: 0.6rem;
+  }
+}
+.popUpJobFormSection .leave-message .formHere .emailWhatsappBtn button {
+  background-color: #3c65f5;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+.popUpJobFormSection .leave-message .formHere .emailWhatsappBtn .whatsapBtn {
+  background-color: #25d366;
+}
+.popUpJobFormSection .leave-message .formHere .alertbelowBtn {
+  display: none;
+}
+
 /* Footer Section */
 .mainFooterSection {
   background: linear-gradient(#f2f6fd, #fff);
@@ -1148,7 +1253,7 @@ li {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  z-index: 1;
+  z-index: 111;
 }
 
 .bottomWhatsapp {
@@ -1183,8 +1288,170 @@ li {
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.4980392157);
   border-radius: 5px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 111;
 }
 .gotoTop i {
   font-size: 1.7em;
+}
+
+/* singleJobPage */
+.LogisticImage {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.8235294118), rgba(0, 0, 0, 0.2941176471)), url(../images/businessDealImgHome.png);
+  background-position-y: 17%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  color: #fff;
+  flex-direction: column;
+  height: 45vh;
+  padding: 5px 10px;
+  background-attachment: fixed;
+}
+.LogisticImage h1 {
+  font-size: 3rem;
+}
+@media screen and (max-width: 530px) {
+  .LogisticImage h1 {
+    font-size: 2rem;
+    font-family: Poppins, sans-serif;
+  }
+}
+
+.jobDescLine {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 25px 15px;
+}
+.jobDescLine strong {
+  border-bottom: 1px solid #000;
+}
+
+.singleJobPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 35px;
+  justify-content: space-between;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 5rem;
+  border-radius: 15px;
+}
+.singleJobPage .elibityBenefitArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+  align-items: normal;
+}
+.singleJobPage .elibityBenefitArea .eligibity,
+.singleJobPage .elibityBenefitArea .benefitArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  align-items: normal;
+}
+.singleJobPage .elibityBenefitArea .eligibity .headLine,
+.singleJobPage .elibityBenefitArea .benefitArea .headLine {
+  margin-top: 1.3rem;
+  font-size: 1.5rem;
+  color: #3c65f5;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+}
+.singleJobPage .JobFormSection {
+  width: 40%;
+}
+.singleJobPage .JobFormSection .leave-message .formHere {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+  align-items: normal;
+}
+.singleJobPage .JobFormSection .leave-message .formHere label {
+  margin-top: 0.6rem;
+  font-family: Poppins, sans-serif;
+}
+.singleJobPage .JobFormSection .leave-message .formHere input {
+  padding: 0.3rem;
+}
+.singleJobPage .JobFormSection .leave-message .formHere input::-moz-placeholder {
+  font-family: Poppins, sans-serif;
+}
+.singleJobPage .JobFormSection .leave-message .formHere input::placeholder {
+  font-family: Poppins, sans-serif;
+}
+.singleJobPage .JobFormSection .leave-message .formHere .emailWhatsappBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 1rem;
+}
+.singleJobPage .JobFormSection .leave-message .formHere .emailWhatsappBtn button,
+.singleJobPage .JobFormSection .leave-message .formHere .emailWhatsappBtn .whatsapBtn {
+  flex: 1;
+  color: #fff;
+  padding: 0.5rem 0.6rem;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.singleJobPage .JobFormSection .leave-message .formHere .emailWhatsappBtn button {
+  background-color: #3c65f5;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+.singleJobPage .JobFormSection .leave-message .formHere .emailWhatsappBtn .whatsapBtn {
+  background-color: #25d366;
+}
+.singleJobPage .JobFormSection .leave-message .formHere .alertbelowBtn {
+  display: none;
+}
+
+@media screen and (max-width: 856px) {
+  .singleJobPage {
+    flex-direction: column;
+  }
+  .singleJobPage .JobFormSection {
+    width: 100%;
+  }
+  .singleJobPage .JobFormSection .emailWhatsappBtn .emailWhatsappBtn button,
+  .singleJobPage .JobFormSection .emailWhatsappBtn .emailWhatsappBtn .whatsapBtn {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 856px) and (max-width: 623px) {
+  .singleJobPage .JobFormSection .emailWhatsappBtn .emailWhatsappBtn button,
+  .singleJobPage .JobFormSection .emailWhatsappBtn .emailWhatsappBtn .whatsapBtn {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .singleJobPage {
+    flex-direction: column;
+    padding: 15px;
+    margin: 0.5rem;
+  }
+  .singleJobPage .elibityBenefitArea .eligibity .headLine,
+  .singleJobPage .elibityBenefitArea .benefitArea .headLine {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 424px) {
+  .singleJobPage .JobFormSection .leave-message .formHere .emailWhatsappBtn button,
+  .singleJobPage .JobFormSection .leave-message .formHere .emailWhatsappBtn .whatsapBtn {
+    padding: 0.2rem 0rem;
+    font-size: 0.9rem;
+  }
 }/*# sourceMappingURL=style.css.map */

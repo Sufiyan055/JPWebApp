@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/enquiryform.css" />
-    <link rel="stylesheet" href="styles/findjobs.css" />
-    <link rel="stylesheet" href="styles/aboutUs.css" />
-    <link rel="stylesheet" href="styles/contactUs.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
 
     <link
       rel="stylesheet"
@@ -16,7 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Contact us - Tiara</title>
+    <title>Apply Job - Tiara</title>
   </head>
   <body>
     <header class="navHeroSection nonIndexHtml">
@@ -25,96 +21,136 @@
         </span>
         <h1 class="logoImg">
           <a href="index.html"
-            ><img src="images/Tiara Consultancy services.png" alt="Tiara Logo"
+            ><img
+              src="../images/Tiara Consultancy services.png"
+              alt="Tiara Logo"
           /></a>
         </h1>
         <ul class="ulBar">
           <img
-            src="images/Tiara Consultancy services.png"
+            src="../images/Tiara Consultancy services.png"
             alt="Tiara Logo"
             class="ulBarLogoImage"
           />
-          <li><a href="index.html">Home</a></li>
-          <li><a href="findJobs.html">Find Jobs</a></li>
-          <li><a href="enquiryform.html">Employer Enquiry</a></li>
-          <li><a href="aboutUs.html">About Us</a></li>
-          <a href="contactUs.html" class="contactUsUlbar highlight"
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../findJobs.html">Find Jobs</a></li>
+          <li><a href="../enquiryform.html">Employer Enquiry</a></li>
+          <li><a href="../aboutUs.html">About Us</a></li>
+          <a href="../contactUs.html" class="contactUsUlbar highlight"
             >Contact Us</a
           >
         </ul>
-        <a href="contactUs.html" class="contactUs">Contact Us</a>
+        <a href="../contactUs.html" class="contactUs">Contact Us</a>
       </nav>
     </header>
 
     <!-- Contact Tiara Consultancy  -->
 
-    <section class="tagLineBgImage contactUsImage">
-      <h1>
-        Contact <br />
-        <strong>Tiara Consultancy </strong>
-      </h1>
+    <section class="LogisticImage">
+      <h1>Apply Job</h1>
     </section>
 
     <!--  -->
 
-    <section class="contactSection" id="contact">
-      <div class="leave-message" id="leave-message">
-        <h2>Get In Touch</h2>
-        <p>
-          Thank you for reaching out to us. Leave a meassage our team will get
-          in touch with you shortly. Have a nice day!
-        </p>
-        <form action="https://formspree.io/f/movvvzqv" method="POST">
-          <input type="hidden" name="_subject" value="Customer Query" />
+    <div class="jobDescLine"><strong>Job Description</strong></div>
 
-          <label for="name" class="hidden">Name*</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter Name"
-            class="hidden"
-            required
-          />
-
-          <label for="phone" class="hidden">Phone Number*</label>
-          <input
-            type="number"
-            id="phone"
-            name="Number"
-            placeholder="Enter Phone No."
-            class="hidden"
-            required
-          />
-
-          <label for="email" class="hidden">Email*</label>
-          <input
-            type="email"
-            id="email"
-            name="Email"
-            placeholder="Enter Email"
-            class="hidden"
-            required
-          />
-
-          <label for="message" class="hidden">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Describe"
-            class="hidden"
-          ></textarea>
-          <div class="emailWhatsappBtn hidden">
-            <button type="submit">Send on Email</button><span>OR</span>
-            <a class="whatsapBtn" onclick="sendtoWhatsapp()"
-              >Send on Whatsapp</a
-            >
+    <section class="singleJobPage">
+      <section class="elibityBenefitArea">
+        <div class="eligibity">
+          <strong class="headLine">
+            <i class="fa-solid fa-user-check"></i>Eligibility Criteria</strong
+          >
+          <div class="smallLineJobBox">
+            <label for="#">Age</label>
+            - <span>18 to 28</span>
           </div>
-          <p class="alertbelowBtn" id="alertbelowBtn">
-            Please fill the required "*" Input
-          </p>
-        </form>
-      </div>
+          <div class="smallLineJobBox">
+            <label for="#">Martial Status</label>
+            - <span>Married/Unmarried</span>
+          </div>
+          <div class="smallLineJobBox">
+            <label for="#">Language</label>
+            - <span>German (B1)</span>
+          </div>
+        </div>
+        <div class="benefitArea">
+          <strong class="headLine"
+            ><i class="fa-solid fa-hand-holding-dollar"></i> Benefits</strong
+          >
+          <div class="firstLineBArea">
+            First Year 81,076 + 11,440 | Second Year 85,580 + 11,440
+          </div>
+          <div class="firstLineBArea">
+            Third Year 94,589 + 11,440 Rent allowance paid by the company,
+          </div>
+          <div class="firstLineBArea">
+            Total rent so far 23,422/monthly after the completion of the
+            training – 20,7195-23,4221/month
+          </div>
+        </div>
+      </section>
+
+      <section class="JobFormSection" id="applyJob">
+        <div class="leave-message" id="leave-message">
+          <form
+            action="https://formspree.io/f/movvvzqv"
+            method="POST"
+            enctype="multipart/form-data"
+            class="formHere"
+          >
+            <input type="hidden" name="_subject" value="Appling For Job" />
+
+            <label for="name">Name*</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter Name"
+              required
+            />
+
+            <label for="phone">Phone Number*</label>
+            <input
+              type="number"
+              id="phone"
+              name="Number"
+              placeholder="Enter Phone No."
+              required
+            />
+
+            <label for="email">Email*</label>
+            <input
+              type="email"
+              id="email"
+              name="Email"
+              placeholder="Enter Email"
+              required
+            />
+
+            <label for="Jobapply">Job Apply For?*</label>
+            <input
+              type="text"
+              id="Jobapply"
+              name="Jobapply"
+              placeholder="Job Apply For?"
+              required
+            />
+
+            <label for="#">Upload CV*</label>
+            <input type="file" id="myfile" name="upload" class="myfile" />
+
+            <div class="emailWhatsappBtn">
+              <button type="submit">Send on Email</button><span>OR</span>
+              <a class="whatsapBtn" onclick="sendtoWhatsapp()"
+                >Send on Whatsapp</a
+              >
+            </div>
+            <p class="alertbelowBtn" id="alertbelowBtn">
+              Please fill the required "*" Input
+            </p>
+          </form>
+        </div>
+      </section>
     </section>
 
     <!--  -->
@@ -143,7 +179,9 @@
       <div class="footerBox">
         <div class="logoHere">
           <a href="index.html" class="logoImg"
-            ><img src="images/Tiara Consultancy services.png" alt="Logo Image"
+            ><img
+              src="../images/Tiara Consultancy services.png"
+              alt="Logo Image"
           /></a>
           <p>
             Tiara Consultancy Services specializes in global recruitment across
@@ -199,19 +237,18 @@
     </footer>
 
     <!-- Script -->
-    <script src="app.js"></script>
+    <script src="../app.js"></script>
     <script>
       function sendtoWhatsapp() {
         let messageOnTop = "-------Customer Message-------";
         let name = document.getElementById("name").value;
         let phone = document.getElementById("phone").value;
         let email = document.getElementById("email").value;
-        let photographyService =
-          document.getElementById("photographyService").value;
-        let message = document.getElementById("message").value;
+        let Jobapply = document.getElementById("Jobapply").value;
+        let myfile = document.getElementById("myfile").value;
         let alertbelowBtn = document.getElementById("alertbelowBtn");
 
-        if (!name || !phone || !email || !photographyService) {
+        if (!name || !phone || !email) {
           alertbelowBtn.style.display = "block";
           return;
         } else {
@@ -231,11 +268,11 @@
           "email: " +
           email +
           "%0a" +
-          "Photography Service: " +
-          photographyService +
+          "Apply Job: " +
+          Jobapply +
           "%0a" +
-          "message: " +
-          message;
+          "My File: " +
+          myfile;
 
         window.open(url, "_blank").focus();
       }

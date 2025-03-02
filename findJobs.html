@@ -55,6 +55,14 @@
       </p>
     </section>
 
+    <div class="tagLineTwoFindJobs fromLeftSide">
+      <p class="hidden">
+        "Explore our Ausbildung Program – a unique blend of practical training
+        and education. Gain industry-specific skills, earn while you learn, and
+        secure a stable, rewarding career!"
+      </p>
+    </div>
+
     <!-- Jobs Category Section -->
 
     <div class="mainSearchBar">
@@ -86,27 +94,6 @@
         </div>
       </div>
     </div>
-
-    <!--     <div class="search-container">
-      <input
-        type="text"
-        class="search-input"
-        placeholder="Search by profile and location..."
-      />
-      <select class="location-dropdown">
-        <option>All Locations</option>
-        <option>Australia</option>
-        <option>Austria</option>
-        <option>Belgium</option>
-        <option>Germany</option>
-        <option>Noida</option>
-        <option>USA</option>
-      </select>
-      <button class="search-button">
-        <i class="fas fa-search"></i> Search
-      </button>
-    </div>
- -->
     <section class="jobsCategorySection">
       <div class="mainJobsDiv">
         <div class="job-card hidden">
@@ -125,8 +112,10 @@
             </div>
             <p>🎓 Graduation</p>
             <div class="buttons">
-              <a href="#"><button class="apply">APPLY</button></a>
-              <a href="#"
+              <a onclick="openPoppupJob()"
+                ><button class="apply">APPLY</button></a
+              >
+              <a href="JobPages/jobPageSingle.html"
                 ><button class="description">JOB DESCRIPTION</button></a
               >
             </div>
@@ -149,8 +138,10 @@
             </div>
             <p>🎓 Graduation</p>
             <div class="buttons">
-              <a href="#"><button class="apply">APPLY</button></a>
-              <a href="#"
+              <a onclick="openPoppupJob()"
+                ><button class="apply">APPLY</button></a
+              >
+              <a href="JobPages/jobPageSingle.html"
                 ><button class="description">JOB DESCRIPTION</button></a
               >
             </div>
@@ -173,8 +164,10 @@
             </div>
             <p>🎓 Graduation</p>
             <div class="buttons">
-              <a href="#"><button class="apply">APPLY</button></a>
-              <a href="#"
+              <a onclick="openPoppupJob()"
+                ><button class="apply">APPLY</button></a
+              >
+              <a href="JobPages/jobPageSingle.html"
                 ><button class="description">JOB DESCRIPTION</button></a
               >
             </div>
@@ -197,8 +190,10 @@
             </div>
             <p>🎓 Graduation</p>
             <div class="buttons">
-              <a href="#"><button class="apply">APPLY</button></a>
-              <a href="#"
+              <a onclick="openPoppupJob()"
+                ><button class="apply">APPLY</button></a
+              >
+              <a href="JobPages/jobPageSingle.html"
                 ><button class="description">JOB DESCRIPTION</button></a
               >
             </div>
@@ -221,8 +216,10 @@
             </div>
             <p>🎓 Graduation</p>
             <div class="buttons">
-              <a href="#"><button class="apply">APPLY</button></a>
-              <a href="#"
+              <a onclick="openPoppupJob()"
+                ><button class="apply">APPLY</button></a
+              >
+              <a href="JobPages/jobPageSingle.html"
                 ><button class="description">JOB DESCRIPTION</button></a
               >
             </div>
@@ -245,8 +242,10 @@
             </div>
             <p>🎓 Graduation</p>
             <div class="buttons">
-              <a href="#"><button class="apply">APPLY</button></a>
-              <a href="#"
+              <a onclick="openPoppupJob()"
+                ><button class="apply">APPLY</button></a
+              >
+              <a href="JobPages/jobPageSingle.html"
                 ><button class="description">JOB DESCRIPTION</button></a
               >
             </div>
@@ -269,8 +268,10 @@
             </div>
             <p>🎓 Graduation</p>
             <div class="buttons">
-              <a href="#"><button class="apply">APPLY</button></a>
-              <a href="#"
+              <a onclick="openPoppupJob()"
+                ><button class="apply">APPLY</button></a
+              >
+              <a href="JobPages/jobPageSingle.html"
                 ><button class="description">JOB DESCRIPTION</button></a
               >
             </div>
@@ -293,8 +294,10 @@
             </div>
             <p>🎓 Graduation</p>
             <div class="buttons">
-              <a href="#"><button class="apply">APPLY</button></a>
-              <a href="#"
+              <a onclick="openPoppupJob()"
+                ><button class="apply">APPLY</button></a
+              >
+              <a href="JobPages/jobPageSingle.html"
                 ><button class="description">JOB DESCRIPTION</button></a
               >
             </div>
@@ -321,6 +324,69 @@
       <i class="fa-solid fa-arrow-up"></i>
     </div>
     <!--  -->
+
+    <!-- Form -->
+    <section class="popUpJobFormSection" id="applyJob">
+      <i class="fa-solid fa-xmark togglePopUp" onclick="poppupJobForm()"></i>
+      <div class="leave-message" id="leave-message">
+        <form
+          action="https://formspree.io/f/movvvzqv"
+          method="POST"
+          class="formHere"
+        >
+          <input type="hidden" name="_subject" value="Appling For Job" />
+
+          <label for="name">Name*</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter Name"
+            required
+          />
+
+          <label for="phone">Phone Number*</label>
+          <input
+            type="number"
+            id="phone"
+            name="Number"
+            placeholder="Enter Phone No."
+            required
+          />
+
+          <label for="email">Email*</label>
+          <input
+            type="email"
+            id="email"
+            name="Email"
+            placeholder="Enter Email"
+            required
+          />
+
+          <label for="Jobapply">Job Apply For?*</label>
+          <input
+            type="text"
+            id="Jobapply"
+            name="Jobapply"
+            placeholder="Job Apply For?"
+            required
+          />
+
+          <!-- <label for="#">Upload CV*</label>
+          <input type="file" id="myfile" name="upload" class="myfile" /> -->
+
+          <div class="emailWhatsappBtn">
+            <button type="submit">Send on Email</button><span>OR</span>
+            <a class="whatsapBtn" onclick="sendtoWhatsapp()"
+              >Send on Whatsapp</a
+            >
+          </div>
+          <p class="alertbelowBtn" id="alertbelowBtn">
+            Please fill the required "*" Input
+          </p>
+        </form>
+      </div>
+    </section>
 
     <!-- Footer Section -->
 
@@ -369,6 +435,12 @@
           <a href="tel:+917004301059"
             ><i class="fa-solid fa-phone"></i>+91-7004 301 059</a
           >
+          <a href="tel:+918433881059"
+            ><i class="fa-solid fa-phone"></i>+91-8433 881 059</a
+          >
+          <a href="tel:+917208307269"
+            ><i class="fa-solid fa-phone"></i>+91-7208 307 269</a
+          >
           <a href="mailto:resume@tiaraconsultancy.in?subject=Resume"
             ><i class="fa-solid fa-envelope"></i>resume@tiaraconsultancy.in</a
           >
@@ -379,5 +451,147 @@
 
     <!-- Script -->
     <script src="app.js"></script>
+    <script>
+      const wrapper = document.querySelector(".wrapper"),
+        selectBtn = wrapper.querySelector(".select-btn"),
+        searchInp = wrapper.querySelector("input"),
+        options = wrapper.querySelector(".options");
+      let countries = [
+        "Afghanistan",
+        "Algeria",
+        "Argentina",
+        "Australia",
+        "Bangladesh",
+        "Belgium",
+        "Bhutan",
+        "Brazil",
+        "Canada",
+        "China",
+        "Denmark",
+        "Ethiopia",
+        "Finland",
+        "France",
+        "Germany",
+        "Hungary",
+        "Iceland",
+        "India",
+        "Indonesia",
+        "Iran",
+        "Italy",
+        "Japan",
+        "Malaysia",
+        "Maldives",
+        "Mexico",
+        "Morocco",
+        "Nepal",
+        "Netherlands",
+        "Nigeria",
+        "Norway",
+        "Pakistan",
+        "Peru",
+        "Russia",
+        "Romania",
+        "South Africa",
+        "Spain",
+        "Sri Lanka",
+        "Sweden",
+        "Switzerland",
+        "Thailand",
+        "Turkey",
+        "Uganda",
+        "Ukraine",
+        "United States",
+        "United Kingdom",
+        "Vietnam",
+      ];
+      function addCountry(selectedCountry) {
+        options.innerHTML = "";
+        countries.forEach((country) => {
+          let isSelected = country == selectedCountry ? "selected" : "";
+          let li = `<li onclick="updateName(this)" class="${isSelected}">${country}</li>`;
+          options.insertAdjacentHTML("beforeend", li);
+        });
+      }
+      addCountry();
+      function updateName(selectedLi) {
+        searchInp.value = "";
+        addCountry(selectedLi.innerText);
+        wrapper.classList.remove("active");
+        selectBtn.firstElementChild.innerText = selectedLi.innerText;
+      }
+      searchInp.addEventListener("keyup", () => {
+        let arr = [];
+        let searchWord = searchInp.value.toLowerCase();
+        arr = countries
+          .filter((data) => {
+            return data.toLowerCase().startsWith(searchWord);
+          })
+          .map((data) => {
+            let isSelected =
+              data == selectBtn.firstElementChild.innerText ? "selected" : "";
+            return `<li onclick="updateName(this)" class="${isSelected}">${data}</li>`;
+          })
+          .join("");
+        options.innerHTML = arr
+          ? arr
+          : `<p style="margin-top: 10px;">Oops! Country not found</p>`;
+      });
+      selectBtn.addEventListener("click", () =>
+        wrapper.classList.toggle("active")
+      );
+    </script>
+
+    <script>
+      function sendtoWhatsapp() {
+        let messageOnTop = "-------Customer Message-------";
+        let name = document.getElementById("name").value;
+        let phone = document.getElementById("phone").value;
+        let email = document.getElementById("email").value;
+        let Jobapply = document.getElementById("Jobapply").value;
+        let myfile = document.getElementById("myfile").value;
+        let alertbelowBtn = document.getElementById("alertbelowBtn");
+
+        if (!name || !phone || !email) {
+          alertbelowBtn.style.display = "block";
+          return;
+        } else {
+          alertbelowBtn.style.display = "none";
+        }
+
+        let url =
+          "https://wa.me/917304888579?text=" +
+          messageOnTop +
+          "%0a" +
+          "Name: " +
+          name +
+          "%0a" +
+          "Phone: " +
+          phone +
+          "%0a" +
+          "email: " +
+          email +
+          "%0a" +
+          "Apply Job: " +
+          Jobapply +
+          "%0a" +
+          "My File: " +
+          myfile;
+
+        window.open(url, "_blank").focus();
+      }
+    </script>
+
+    <script>
+      let apply = document.querySelectorAll(".applyAbtn");
+      let popUpJobFormSection = document.querySelector(".popUpJobFormSection");
+
+      function openPoppupJob() {
+        popUpJobFormSection.classList.add("openJobApplyForm");
+      }
+
+      function poppupJobForm() {
+        popUpJobFormSection.classList.remove("openJobApplyForm");
+      }
+    </script>
   </body>
 </html>

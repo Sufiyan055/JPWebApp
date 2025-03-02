@@ -100,7 +100,7 @@ $whiteBg: #f8f9fa;
       padding: 0px 25px;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
         rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-      z-index: 111;
+      z-index: 1111;
       .logoImg {
         a {
           img {
@@ -633,7 +633,7 @@ $whiteBg: #f8f9fa;
         border-radius: 12px;
         overflow: hidden;
         margin-top: -15px;
-        border: 0.1rem solid $primaryColor;
+        border: 0.1rem solid #817979;
         .job-image {
           height: 100%;
           width: 100%;
@@ -757,18 +757,18 @@ $whiteBg: #f8f9fa;
         margin-top: 15px;
         .job-info {
           h2 {
-            font-size: 0.5rem;
+            font-size: 0.9rem;
           }
           .details {
-            font-size: 0.5rem;
+            font-size: 0.9rem;
           }
           p {
-            font-family: 0.5rem;
+            font-size: 0.9rem;
           }
           .buttons {
             a {
               button {
-                font-size: 0.1rem;
+                font-size: 0.7rem;
                 padding: 8px 1px;
               }
             }
@@ -1037,6 +1037,7 @@ $whiteBg: #f8f9fa;
   flex-direction: column;
   align-items: normal;
   padding: 0px 15rem;
+
   strong {
     font-size: 3rem;
     text-transform: capitalize;
@@ -1044,6 +1045,25 @@ $whiteBg: #f8f9fa;
     line-height: 1;
     &:nth-child(2) {
       color: #2563eb;
+    }
+  }
+}
+
+@media screen and (max-width: 1008px) {
+  .wordBeforeSuccessLine {
+    align-items: center;
+    padding: 3rem;
+    margin-bottom: -5rem;
+    strong {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wordBeforeSuccessLine {
+    strong {
+      font-size: 1.5rem;
     }
   }
 }
@@ -1159,6 +1179,85 @@ $whiteBg: #f8f9fa;
 
     .buttons {
       justify-content: center;
+    }
+  }
+}
+
+/* Form */
+
+.popUpJobFormSection {
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $white;
+  padding: 3rem;
+  width: 60%;
+  overflow: hidden;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  z-index: 1111;
+  border-radius: 1rem;
+  @media (max-width: 586px) {
+    width: 95%;
+  }
+  .togglePopUp {
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    color: red;
+    font-size: 1.9rem;
+    cursor: pointer;
+    padding: 5px;
+    background-color: #7a7a7a4b;
+  }
+  &.openJobApplyForm {
+    display: block;
+  }
+  .leave-message {
+    .formHere {
+      @include flexcontent(5px);
+      flex-direction: column;
+      align-items: normal;
+      label {
+        margin-top: 0.6rem;
+        font-family: Poppins, sans-serif;
+      }
+      input {
+        padding: 0.3rem;
+        &::placeholder {
+          font-family: Poppins, sans-serif;
+        }
+      }
+      .emailWhatsappBtn {
+        @include flexcontent(5px);
+        margin-top: 1rem;
+        button,
+        .whatsapBtn {
+          flex: 1;
+          color: $white;
+          padding: 0.5rem 0.6rem;
+          text-align: center;
+          font-family: Poppins, sans-serif;
+          font-size: 1rem;
+          cursor: pointer;
+          @media (max-width: 586px) {
+            font-size: 0.6rem;
+          }
+        }
+        button {
+          background-color: $primaryColor;
+          color: $white;
+          border: none;
+          outline: none;
+        }
+        .whatsapBtn {
+          background-color: #25d366;
+        }
+      }
+      .alertbelowBtn {
+        display: none;
+      }
     }
   }
 }
@@ -1285,7 +1384,7 @@ $whiteBg: #f8f9fa;
   border-radius: 50%;
   cursor: pointer;
   user-select: none;
-  z-index: 1;
+  z-index: 111;
 }
 
 .bottomWhatsapp {
@@ -1320,8 +1419,179 @@ $whiteBg: #f8f9fa;
   box-shadow: 0px 0px 5px 1px #0000007f;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 111;
   i {
     font-size: 1.7em;
+  }
+}
+
+/* singleJobPage */
+
+.LogisticImage {
+  background: linear-gradient(45deg, #000000d2, #0000004b),
+    url(../images/businessDealImgHome.png);
+  background-position-y: 17%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  color: #fff;
+  flex-direction: column;
+  height: 45vh;
+  padding: 5px 10px;
+  background-attachment: fixed;
+  h1 {
+    font-size: 3rem;
+    @media screen and (max-width: 530px) {
+      font-size: 2rem;
+      font-family: Poppins, sans-serif;
+    }
+  }
+}
+
+.jobDescLine {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 25px 15px;
+  strong {
+    border-bottom: 1px solid #000;
+  }
+}
+
+.singleJobPage {
+  @include flexcontent(15px);
+  padding: 35px;
+  justify-content: space-between;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 5rem;
+  border-radius: 15px;
+  .elibityBenefitArea {
+    @include flexcontent(5px);
+    flex-direction: column;
+    align-items: normal;
+    .eligibity,
+    .benefitArea {
+      @include flexcontent(20px);
+      flex-direction: column;
+      align-items: normal;
+      .headLine {
+        margin-top: 1.3rem;
+        font-size: 1.5rem;
+        color: $primaryColor;
+        font-family: Poppins, sans-serif;
+        font-weight: 600;
+      }
+    }
+  }
+  .JobFormSection {
+    width: 40%;
+    .leave-message {
+      .formHere {
+        @include flexcontent(5px);
+        flex-direction: column;
+        align-items: normal;
+        label {
+          margin-top: 0.6rem;
+          font-family: Poppins, sans-serif;
+        }
+        input {
+          padding: 0.3rem;
+          &::placeholder {
+            font-family: Poppins, sans-serif;
+          }
+        }
+        .emailWhatsappBtn {
+          @include flexcontent(5px);
+          margin-top: 1rem;
+          button,
+          .whatsapBtn {
+            flex: 1;
+            color: $white;
+            padding: 0.5rem 0.6rem;
+            text-align: center;
+            font-family: Poppins, sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+          }
+          button {
+            background-color: $primaryColor;
+            color: $white;
+            border: none;
+            outline: none;
+          }
+          .whatsapBtn {
+            background-color: #25d366;
+          }
+        }
+        .alertbelowBtn {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 856px) {
+  .singleJobPage {
+    flex-direction: column;
+    .JobFormSection {
+      width: 100%;
+      .emailWhatsappBtn {
+        .emailWhatsappBtn {
+          button,
+          .whatsapBtn {
+            font-size: 1rem;
+            @media (max-width: 623px) {
+              font-size: 0.7rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .singleJobPage {
+    flex-direction: column;
+    padding: 15px;
+    margin: 0.5rem;
+    .elibityBenefitArea {
+      .eligibity,
+      .benefitArea {
+        .headLine {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .JobFormSection {
+      .emailWhatsappBtn {
+        .emailWhatsappBtn {
+          button,
+          .whatsapBtn {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .singleJobPage {
+    .JobFormSection {
+      .leave-message {
+        .formHere {
+          .emailWhatsappBtn {
+            button,
+            .whatsapBtn {
+              padding: 0.2rem 0rem;
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
   }
 }

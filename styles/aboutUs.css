@@ -48,6 +48,7 @@ body {
   .AboutTiara p {
     width: 90%;
     padding: 15px;
+    font-size: 0.9rem;
   }
   .AboutTiara p .firstInverted,
   .AboutTiara p .secondInverted {
