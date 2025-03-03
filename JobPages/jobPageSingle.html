@@ -92,14 +92,7 @@
 
       <section class="JobFormSection" id="applyJob">
         <div class="leave-message" id="leave-message">
-          <form
-            action="https://formspree.io/f/movvvzqv"
-            method="POST"
-            enctype="multipart/form-data"
-            class="formHere"
-          >
-            <input type="hidden" name="_subject" value="Appling For Job" />
-
+          <form action="#" enctype="multipart/form-data" class="formHere form">
             <label for="name">Name*</label>
             <input
               type="text"
@@ -113,7 +106,7 @@
             <input
               type="number"
               id="phone"
-              name="Number"
+              name="phone"
               placeholder="Enter Phone No."
               required
             />
@@ -122,7 +115,7 @@
             <input
               type="email"
               id="email"
-              name="Email"
+              name="email"
               placeholder="Enter Email"
               required
             />
@@ -131,19 +124,16 @@
             <input
               type="text"
               id="Jobapply"
-              name="Jobapply"
+              name="message"
               placeholder="Job Apply For?"
               required
             />
 
             <label for="#">Upload CV*</label>
-            <input type="file" id="myfile" name="upload" class="myfile" />
+            <input type="file" name="pdf" id="myfile" class="myfile" />
 
-            <div class="emailWhatsappBtn">
-              <button type="submit">Send on Email</button><span>OR</span>
-              <a class="whatsapBtn" onclick="sendtoWhatsapp()"
-                >Send on Whatsapp</a
-              >
+            <div class="emailWhatsappBtn button-area">
+              <button type="submit">Send on Email</button><span></span>
             </div>
             <p class="alertbelowBtn" id="alertbelowBtn">
               Please fill the required "*" Input
@@ -238,44 +228,6 @@
 
     <!-- Script -->
     <script src="../app.js"></script>
-    <script>
-      function sendtoWhatsapp() {
-        let messageOnTop = "-------Customer Message-------";
-        let name = document.getElementById("name").value;
-        let phone = document.getElementById("phone").value;
-        let email = document.getElementById("email").value;
-        let Jobapply = document.getElementById("Jobapply").value;
-        let myfile = document.getElementById("myfile").value;
-        let alertbelowBtn = document.getElementById("alertbelowBtn");
-
-        if (!name || !phone || !email) {
-          alertbelowBtn.style.display = "block";
-          return;
-        } else {
-          alertbelowBtn.style.display = "none";
-        }
-
-        let url =
-          "https://wa.me/917304888579?text=" +
-          messageOnTop +
-          "%0a" +
-          "Name: " +
-          name +
-          "%0a" +
-          "Phone: " +
-          phone +
-          "%0a" +
-          "email: " +
-          email +
-          "%0a" +
-          "Apply Job: " +
-          Jobapply +
-          "%0a" +
-          "My File: " +
-          myfile;
-
-        window.open(url, "_blank").focus();
-      }
-    </script>
+    <script src="../ctscript.js"></script>
   </body>
 </html>

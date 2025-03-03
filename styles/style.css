@@ -1093,11 +1093,17 @@ li {
   flex-direction: column;
   align-items: normal;
 }
+.popUpJobFormSection .leave-message .formHere #phone::-webkit-outer-spin-button,
+.popUpJobFormSection .leave-message .formHere #phone::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .popUpJobFormSection .leave-message .formHere label {
   margin-top: 0.6rem;
   font-family: Poppins, sans-serif;
 }
 .popUpJobFormSection .leave-message .formHere input {
+  border: 1px solid #000;
   padding: 0.3rem;
 }
 .popUpJobFormSection .leave-message .formHere input::-moz-placeholder {
@@ -1375,6 +1381,11 @@ li {
   gap: 5px;
   flex-direction: column;
   align-items: normal;
+}
+.singleJobPage .JobFormSection .leave-message .formHere #phone::-webkit-outer-spin-button,
+.singleJobPage .JobFormSection .leave-message .formHere #phone::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 .singleJobPage .JobFormSection .leave-message .formHere label {
   margin-top: 0.6rem;
